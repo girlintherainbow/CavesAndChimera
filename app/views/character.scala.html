@@ -1,0 +1,38 @@
+@(character : GameCharacter)
+@import helper._
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=deviceml>dth, initial-scale=1">
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+    <script src="/assets/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+<h1>Caves and Chimera</h1>
+<body>
+
+<div class="container">
+    <table class = "table table-striped">
+        <thead>
+        <tr>
+            <th>Character ID</th>
+            <th>Name</th>
+            <th>Level</th>
+            <th>Race</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+            <td>@character.getGameCharacterID()</td>
+            <td>@character.getCharacterName()</td>
+            <td>@character.getCharacterLevel()</td>
+            <td>@character.getCharacterRaceID()</td>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
