@@ -1,4 +1,4 @@
-@(character : GameCharacter)
+@(character : GameCharacter, race : List[CharacterRace])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@
     <table class = "table table-striped">
         <thead>
         <tr>
-            <th>Character ID</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Level</th>
             <th>Race</th>
@@ -29,7 +29,7 @@
             <td>@character.getGameCharacterID()</td>
             <td>@character.getCharacterName()</td>
             <td>@character.getCharacterLevel()</td>
-            <td>@character.getCharacterRaceID()</td>
+            <td>@race.getCharacterRaceName()</td>
 
         </tbody>
     </table>

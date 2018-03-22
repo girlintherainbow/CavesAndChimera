@@ -1,5 +1,6 @@
 package controllers;
 
+import models.CharacterRace;
 import models.GameCharacter;
 import play.data.DynamicForm;
 import play.data.FormFactory;
@@ -44,9 +45,13 @@ public class CharacterController extends Controller
                 createQuery("SELECT gc FROM GameCharacter gc WHERE gameCharacterID = :gameCharacterID", GameCharacter.class).
                 setParameter("gameCharacterID", gameCharacterID).getSingleResult();
 
+       List<CharacterRace> race = jpaApi.em().
+                createQuery("SELECT cr FROM CharacterRace cr").
+               getResultList();
 
 
-        return ok(views.html.character.render(character));
+
+        return ok(views.html.character.render(character, race));
     }
 /*
     @Transactional
