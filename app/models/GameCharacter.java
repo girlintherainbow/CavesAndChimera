@@ -8,7 +8,7 @@ public class GameCharacter
 {
     /*
     public GameCharacter(int gameCharacterIDString characterName, String characterLevel,
-                         int characterRaceID, int characterClassId, int characterBackgroundID,
+                         int characterRaceID, int characterClassID, int characterBackgroundID,
                          int alignmentID, int strength, int strengthMod, int dexterity, int dexMod,
                          int constitution, int conMod, int intelligence, int intelMod, int wisdom, int wisMod,
                          int charisma, int charMod, int passiveWisdomPerception)
@@ -17,7 +17,7 @@ public class GameCharacter
        this.characterName = characterName;
         this.characterLevel = characterLevel;
         this.characterRaceID = characterRaceID;
-        this.characterClassId = characterClassId;
+        this.characterClassID = characterClassID;
         this.characterBackgroundID = characterBackgroundID;
         this.alignmentID = alignmentID;
         this.strength = strength;
@@ -41,7 +41,7 @@ public class GameCharacter
     private String characterName;
     private String characterLevel;
     private int characterRaceID;
-    private int characterClassId;
+    private int characterClassID;
     private int characterBackgroundID;
     private int alignmentID;
     private int strength;
@@ -83,9 +83,9 @@ public class GameCharacter
         return characterRaceID;
     }
 
-    public int getCharacterClassId()
+    public int getCharacterClassID()
     {
-        return characterClassId;
+        return characterClassID;
     }
 
     public int getCharacterBackgroundID()
@@ -178,9 +178,9 @@ public class GameCharacter
         this.characterRaceID = characterRaceID;
     }
 
-    public void setCharacterClassId(int characterClassId)
+    public void setCharacterClassID(int characterClassID)
     {
-        this.characterClassId = characterClassId;
+        this.characterClassID = characterClassID;
     }
 
     public void setCharacterBackgroundID(int characterBackgroundID)

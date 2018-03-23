@@ -1,5 +1,6 @@
 package controllers;
 
+import models.CharacterDetail;
 import models.CharacterRace;
 import models.GameCharacter;
 import play.data.DynamicForm;
@@ -37,21 +38,27 @@ public class CharacterController extends Controller
 
         return ok(views.html.activecharacters.render(characters));
     }
+//todo HELP HELP HELP HELP HELP HELP
 
     @Transactional (readOnly = true)
     public Result getGameCharacter(int gameCharacterID)
     {
-        GameCharacter character = jpaApi.em().
-                createQuery("SELECT gc FROM GameCharacter gc WHERE gameCharacterID = :gameCharacterID", GameCharacter.class).
-                setParameter("gameCharacterID", gameCharacterID).getSingleResult();
 
-       List<CharacterRace> race = jpaApi.em().
-                createQuery("SELECT cr FROM CharacterRace cr").
-               getResultList();
+        String sql ="SELECT NEW models.CharacterDetail(gc.gameCharacterID, gc.characterName, gc.characterLevel," +
+                                                        " cr.characterRaceName, cc.characterClassName, " +
+                                                        "cb.characterBackgroundName) " +
+                "FROM CharacterRace cr " +
+                "JOIN GameCharacter gc ON cr.characterRaceID = gc.characterRaceID " +
+                "JOIN CharacterClass cc ON cc.characterClassID = gc.characterClassID "+
+                "JOIN CharacterBackground cb ON cb.characterBackgroundID = gc.characterBackgroundID "+
+                "WHERE gameCharacterID = :gameCharacterID " ;
+      CharacterDetail details = jpaApi.em().
+                createQuery(sql, CharacterDetail.class).setParameter("gameCharacterID", gameCharacterID).
+               getSingleResult();
 
 
 
-        return ok(views.html.character.render(character, race));
+        return ok(views.html.character.render(details));
     }
 /*
     @Transactional

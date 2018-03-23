@@ -1,4 +1,4 @@
-@(character : GameCharacter, race : List[CharacterRace])
+@(details : CharacterDetail)
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -21,15 +21,19 @@
             <th>Name</th>
             <th>Level</th>
             <th>Race</th>
+            <th>Class</th>
+            <th>Background</th>
 
         </tr>
         </thead>
         <tbody>
 
-            <td>@character.getGameCharacterID()</td>
-            <td>@character.getCharacterName()</td>
-            <td>@character.getCharacterLevel()</td>
-            <td>@race.getCharacterRaceName()</td>
+            <td>@details.getGameCharacterID()</td>
+            <td>@details.getCharacterName()</td>
+            <td>@details.getCharacterLevel()</td>
+            <td>@details.getCharacterRaceName()</td>
+            <td>@details.getCharacterClassName()</td>
+            <td>@details.getCharacterBackgroundName()</td>
 
         </tbody>
     </table>
