@@ -38,7 +38,7 @@ public class CharacterController extends Controller
 
         return ok(views.html.activecharacters.render(characters));
     }
-//todo HELP HELP HELP HELP HELP HELP
+
 
     @Transactional (readOnly = true)
     public Result getGameCharacter(int gameCharacterID)
@@ -46,11 +46,15 @@ public class CharacterController extends Controller
 
         String sql ="SELECT NEW models.CharacterDetail(gc.gameCharacterID, gc.characterName, gc.characterLevel," +
                                                         " cr.characterRaceName, cc.characterClassName, " +
-                                                        "cb.characterBackgroundName) " +
+                                                        "cb.characterBackgroundName, ca.alignmentName, gc.strength," +
+                                                        "gc.strengthMod, gc.dexterity, gc.dexMod, gc.constitution," +
+                                                        "gc.conMod, gc.intelligence, gc.intelMod, gc.wisdom," +
+                                                        "gc.wisMod, gc.charisma, gc.charMod, gc.passiveWisdomPerception) " +
                 "FROM CharacterRace cr " +
                 "JOIN GameCharacter gc ON cr.characterRaceID = gc.characterRaceID " +
                 "JOIN CharacterClass cc ON cc.characterClassID = gc.characterClassID "+
                 "JOIN CharacterBackground cb ON cb.characterBackgroundID = gc.characterBackgroundID "+
+                "JOIN CharacterAlignment ca ON ca.alignmentID = gc.alignmentID "+
                 "WHERE gameCharacterID = :gameCharacterID " ;
       CharacterDetail details = jpaApi.em().
                 createQuery(sql, CharacterDetail.class).setParameter("gameCharacterID", gameCharacterID).

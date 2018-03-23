@@ -10,32 +10,43 @@
     <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
 </head>
-<h1>Caves and Chimera</h1>
+<h1>@details.getCharacterName()</h1>
 <body>
 
+<p></p>
+Character Info:
 <div class="container">
     <table class = "table table-striped">
         <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
             <th>Level</th>
             <th>Race</th>
             <th>Class</th>
             <th>Background</th>
+            <th>Alignment</th>
+            <th>Maybe</th>
 
         </tr>
         </thead>
         <tbody>
 
             <td>@details.getGameCharacterID()</td>
-            <td>@details.getCharacterName()</td>
             <td>@details.getCharacterLevel()</td>
             <td>@details.getCharacterRaceName()</td>
             <td>@details.getCharacterClassName()</td>
             <td>@details.getCharacterBackgroundName()</td>
+            <td>@details.getAlignmentName()</td>
+             <td>@details.getStrength()</td>
 
         </tbody>
+    </table>
+</div>
+<p></p>
+Equipment:
+<div class="container">
+    <table class = "table table-striped">
+        <thead></thead>
     </table>
 </div>
 </body>
