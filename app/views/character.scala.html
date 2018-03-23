@@ -25,7 +25,6 @@ Character Info:
             <th>Class</th>
             <th>Background</th>
             <th>Alignment</th>
-            <th>Maybe</th>
 
         </tr>
         </thead>
@@ -37,16 +36,46 @@ Character Info:
             <td>@details.getCharacterClassName()</td>
             <td>@details.getCharacterBackgroundName()</td>
             <td>@details.getAlignmentName()</td>
-             <td>@details.getStrength()</td>
 
         </tbody>
     </table>
 </div>
 <p></p>
-Equipment:
+Skills:
 <div class="container">
     <table class = "table table-striped">
-        <thead></thead>
+        <thead>
+        <tr>
+            <th>Strength</th>
+            <th>Strength Mod</th>
+            <th>Dexterity</th>
+            <th>Dex Mod</th>
+            <th>Constitution</th>
+            <th>Constitution Mod</th>
+            <th>Intelligence</th>
+            <th>Intel Mod</th>
+            <th>Wisdom</th>
+            <th>Wisdom Mod</th>
+            <th>Charisma</th>
+            <th>Charisma Mod</th>
+            <th>Passive Perception</th>
+        </tr>
+        </thead>
+        <tbody>
+            <td>@details.getStrength</td>
+            <td>@details.getStrengthMod</td>
+            <td>@details.getDexterity</td>
+            <td>@details.getDexMod</td>
+            <td>@details.getConstitution</td>
+            <td>@details.getConMod</td>
+            <td>@details.getIntelligence</td>
+            <td>@details.getIntelMod</td>
+            <td>@details.getWisdom</td>
+            <td>@details.getWisMod</td>
+            <td>@details.getCharisma</td>
+            <td>@details.getCharMod</td>
+            <td>@details.getPassiveWisdomPerception</td>
+        </tbody>
     </table>
 </div>
 </body>
