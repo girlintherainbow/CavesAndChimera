@@ -80,8 +80,16 @@ public class CharacterController extends Controller
                 createQuery(sqlGear, CharacterGear.class).
                 setParameter("gameCharacterID",gameCharacterID).getResultList();
 
+        String sqlNotes = "SELECT NEW models.CharacterNotes(characterNoteID, gameCharacterID, " +
+                "personalityTraits, ideals, bonds, flaws) " +
+                "FROM CharacterNotes WHERE gameCharacterID = :gameCharacterID ";
 
-        return ok(views.html.character.render(details,equipment,gear));
+        List<CharacterNotes> note = jpaApi.em().
+                createQuery(sqlNotes, CharacterNotes.class).
+                setParameter("gameCharacterID", gameCharacterID).getResultList();
+
+
+        return ok(views.html.character.render(details,equipment,gear,note));
     }
 
     @Transactional
