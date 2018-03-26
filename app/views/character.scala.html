@@ -1,5 +1,4 @@
-@(details : CharacterDetail, equipments : List[CharacterEquipment], gears : List[CharacterGear],
-  notes : List[CharacterNotes])
+@(details : CharacterDetail, equipments : List[CharacterEquipment], gears : List[CharacterGear], spells : List[CharacterSpell], notes : List[CharacterNotes])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +77,10 @@ Skills:
             <td>@details.getPassiveWisdomPerception</td>
         </tbody>
     </table>
-     <p></p>
+     <p>
+
+
+     </p>
     Weapons:
     <div class="container">
         <table class = "table table-striped">
@@ -104,6 +106,10 @@ Skills:
             </tbody>
         </table>
     </div>
+    <p>
+
+
+    </p>
     Gear:
     <div class="container">
         <table class = "table table-striped">
@@ -125,6 +131,42 @@ Skills:
             </tbody>
         </table>
     </div>
+    <p>
+
+
+    </p>
+    Spells:
+    <div class="container">
+        <table class = "table table-striped">
+            <thead>
+            <tr>
+                <th>Spell</th>
+                <th>Level</th>
+                <th>Casting Time</th>
+                <th>Duration</th>
+                <th>Range</th>
+                <th>Attack/Save</th>
+                <th>Damage/Effect</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for(spell <- spells){
+            <tr>
+                <td>@spell.getSpellName</td>
+                <td>@spell.getSpellLevel</td>
+                <td>@spell.getCastingTime</td>
+                <td>@spell.getDuration</td>
+                <td>@spell.getRange_Area</td>
+                <td>@spell.getAttack_Save</td>
+                <td>@spell.getDamage_Effect</td>
+            </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <p>
+
+    </p>
     Notes:
     <div class="container">
         <table class = "table table-striped">

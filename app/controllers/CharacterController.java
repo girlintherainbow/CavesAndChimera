@@ -80,6 +80,18 @@ public class CharacterController extends Controller
                 createQuery(sqlGear, CharacterGear.class).
                 setParameter("gameCharacterID",gameCharacterID).getResultList();
 
+        String sqlSpells = "SELECT NEW models.CharacterSpell(cs.characterSpellID, cs.gameCharacterID, " +
+                "s.spellID, s.spellName, s.spellLevel, s.castingTime, " +
+                "s.duration, s.range_Area, s.attack_Save, s.damage_Effect) " +
+                "FROM Spell s JOIN CharacterSpell cs on s.spellID = cs.spellID " +
+                "WHERE gameCharacterID = :gameCharacterID ";
+
+    List<CharacterSpell> spell = jpaApi.em().
+            createQuery(sqlSpells, CharacterSpell.class).
+            setParameter("gameCharacterID", gameCharacterID).getResultList();
+
+
+
         String sqlNotes = "SELECT NEW models.CharacterNotes(characterNoteID, gameCharacterID, " +
                 "personalityTraits, ideals, bonds, flaws) " +
                 "FROM CharacterNotes WHERE gameCharacterID = :gameCharacterID ";
@@ -89,7 +101,7 @@ public class CharacterController extends Controller
                 setParameter("gameCharacterID", gameCharacterID).getResultList();
 
 
-        return ok(views.html.character.render(details,equipment,gear,note));
+        return ok(views.html.character.render(details,equipment,gear,spell,note));
     }
 
     @Transactional

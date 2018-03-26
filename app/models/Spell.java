@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Spells
+public class Spell
 {
     @Id
     private int spellID;
