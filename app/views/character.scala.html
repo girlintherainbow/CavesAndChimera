@@ -1,4 +1,4 @@
-@(details : CharacterDetail)
+@(details : CharacterDetail, equipments : List[CharacterEquipment], gears : List[CharacterGear])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -77,6 +77,53 @@ Skills:
             <td>@details.getPassiveWisdomPerception</td>
         </tbody>
     </table>
+     <p></p>
+    Weapons:
+    <div class="container">
+        <table class = "table table-striped">
+            <thead>
+            <tr>
+                <th>Weapon Name</th>
+                <th>Damage</th>
+                <th>Weight</th>
+                <th>Properties</th>
+                <th>Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for(equipment <- equipments){
+            <tr>
+            <td>@equipment.getEquipmentName</td>
+                <td>@equipment.getEquipmentDamage</td>
+                <td>@equipment.getEquipmentWeight</td>
+                <td>@equipment.getEquipmentProperties</td>
+                <td>@equipment.getEquipmentCost</td>
+            </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    Gear:
+    <div class="container">
+        <table class = "table table-striped">
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Weight</th>
+                <th>Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for(gear <- gears){
+            <tr>
+                <td>@gear.getGearName</td>
+                <td>@gear.getGearWeight</td>
+                <td>@gear.getGearCost</td>
+            </tr>
+            }
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>

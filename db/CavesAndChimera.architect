@@ -461,61 +461,110 @@
     </index>
    </folder>
   </table>
+  <table id="TAB123" populated="true" UUID="65285cec-ed8f-49ad-a043-7ce98071a809" name="Spell" objectType="TABLE" physicalName="Spell" >
+   <remarks></remarks>
+   <folder id="FOLTAB1231" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL124" populated="true" UUID="8337c029-30f1-4adf-ac43-58a45b38f228" autoIncrement="false" autoIncrementSequenceName="Spell_SpellID_seq" defaultValue="" name="SpellID" nullable="0" physicalName="SpellID" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL125" populated="true" UUID="6fc4b66c-28d7-47c5-87b5-be970e5d54b3" autoIncrement="false" autoIncrementSequenceName="Spell_SpellName_seq" defaultValue="" name="SpellName" nullable="0" physicalName="SpellName" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1233" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1232" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1234" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX126" populated="true" UUID="aae10859-732e-434e-9222-2d031412615d" clustered="false" name="Spell_pk" physicalName="spell_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC127" populated="true" UUID="4840b61e-2237-4e2e-9273-083eef52167b" ascendingOrDescending="UNSPECIFIED" column-ref="COL124" name="SpellID" physicalName="SpellID" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB128" populated="true" UUID="8b8a4abe-95c3-4bec-b310-e8a0db82813b" name="CharacterSpell" objectType="TABLE" physicalName="CharacterSpell" >
+   <remarks></remarks>
+   <folder id="FOLTAB1281" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL129" populated="true" UUID="fd2dc3a8-c203-4e87-a976-f8ee46120508" autoIncrement="false" autoIncrementSequenceName="CharacterSpell_CharacterSpellID_seq" defaultValue="" name="CharacterSpellID" nullable="0" physicalName="CharacterSpellID" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL130" populated="true" UUID="de368516-ce13-4624-b182-6ec2b3e8a5ac" autoIncrement="false" autoIncrementSequenceName="GameCharacter_GameCharacterId_seq" defaultValue="" name="GameCharacterId" nullable="0" physicalName="GameCharacterId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL131" populated="true" UUID="027a5cb4-0755-4dcc-8fb7-901e6c6f0e14" autoIncrement="false" autoIncrementSequenceName="Spell_SpellID_seq" defaultValue="" name="SpellID" nullable="0" physicalName="SpellID" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1283" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1282" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1284" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX132" populated="true" UUID="f05a8ce3-8f0e-4596-83b4-a7f7dd7f3f3c" clustered="false" name="CharacterSpell_pk" physicalName="characterspell_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC133" populated="true" UUID="b1ae152a-d4fb-4648-b1cb-1ad4320ca3ed" ascendingOrDescending="UNSPECIFIED" column-ref="COL129" name="CharacterSpellID" physicalName="CharacterSpellID" />
+    </index>
+   </folder>
+  </table>
   <relationships>
-   <relationship id="REL123" populated="true" UUID="714077a3-f61b-4552-8add-6d1de7fa2cff" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="false" name="GameCharacter_CharacterEquipment_fk" physicalName="gamecharacter_characterequipment_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP124" populated="true" UUID="44a86494-e24f-4a06-884a-f9b02be5983f" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL134" populated="true" UUID="714077a3-f61b-4552-8add-6d1de7fa2cff" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="false" name="GameCharacter_CharacterEquipment_fk" physicalName="gamecharacter_characterequipment_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP135" populated="true" UUID="44a86494-e24f-4a06-884a-f9b02be5983f" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL125" populated="true" UUID="f33c584a-d2f9-452c-b052-9a146422e7a4" deferrability="7" deleteRule="3" fk-table-ref="TAB48" fkCardinality="7" identifying="false" name="GameCharacter_CharacterGear_fk" physicalName="gamecharacter_charactergear_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP126" populated="true" UUID="ef5f5722-ff38-4fc1-8aa1-458d7001639c" fk-column-ref="COL50" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL136" populated="true" UUID="f33c584a-d2f9-452c-b052-9a146422e7a4" deferrability="7" deleteRule="3" fk-table-ref="TAB48" fkCardinality="7" identifying="false" name="GameCharacter_CharacterGear_fk" physicalName="gamecharacter_charactergear_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP137" populated="true" UUID="ef5f5722-ff38-4fc1-8aa1-458d7001639c" fk-column-ref="COL50" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL127" populated="true" UUID="44d0326d-be4b-44de-89d4-c7072498ff3f" deferrability="7" deleteRule="3" fk-table-ref="TAB70" fkCardinality="7" identifying="false" name="GameCharacter_CharacterArmor_fk" physicalName="gamecharacter_characterarmor_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP128" populated="true" UUID="828d3ff5-0fc5-418d-bec7-1cfd93a87215" fk-column-ref="COL72" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL138" populated="true" UUID="44d0326d-be4b-44de-89d4-c7072498ff3f" deferrability="7" deleteRule="3" fk-table-ref="TAB70" fkCardinality="7" identifying="false" name="GameCharacter_CharacterArmor_fk" physicalName="gamecharacter_characterarmor_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP139" populated="true" UUID="828d3ff5-0fc5-418d-bec7-1cfd93a87215" fk-column-ref="COL72" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL129" populated="true" UUID="5d464d0b-f1a1-4d54-86dc-293f222f164c" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="false" name="Equipment_CharacterEquipment_fk" physicalName="equipment_characterequipment_fk" pk-table-ref="TAB14" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP130" populated="true" UUID="b7443b9e-08af-4c39-b6c9-0b2cdbfbc2eb" fk-column-ref="COL23" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL15" />
+   <relationship id="REL140" populated="true" UUID="e59d2be2-ed99-4465-83c9-654368c8dde8" deferrability="7" deleteRule="3" fk-table-ref="TAB128" fkCardinality="7" identifying="false" name="GameCharacter_CharacterSpell_fk" physicalName="gamecharacter_characterspell_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP141" populated="true" UUID="b437e218-1834-43b3-8f08-dd33703b09c8" fk-column-ref="COL130" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL131" populated="true" UUID="c7317250-24c2-4b9d-a9f1-619b96f6ad59" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="false" name="EquipmentLocation_CharacterEquipment_fk" physicalName="equipmentlocation_characterequipment_fk" pk-table-ref="TAB27" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP132" populated="true" UUID="189fefc6-a10f-49ad-81e9-7d4b7a7b2b80" fk-column-ref="COL24" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL28" />
+   <relationship id="REL142" populated="true" UUID="5d464d0b-f1a1-4d54-86dc-293f222f164c" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="false" name="Equipment_CharacterEquipment_fk" physicalName="equipment_characterequipment_fk" pk-table-ref="TAB14" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP143" populated="true" UUID="b7443b9e-08af-4c39-b6c9-0b2cdbfbc2eb" fk-column-ref="COL23" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL15" />
    </relationship>
-   <relationship id="REL133" populated="true" UUID="d3b87529-0e95-445b-9306-1f4fe8c86918" deferrability="7" deleteRule="3" fk-table-ref="TAB14" fkCardinality="7" identifying="false" name="EquiptmentClass_Equipment_fk" physicalName="equiptmentclass_equipment_fk" pk-table-ref="TAB32" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP134" populated="true" UUID="c396326e-94d6-4f75-823a-80f406e2bb5d" fk-column-ref="COL17" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL33" />
+   <relationship id="REL144" populated="true" UUID="c7317250-24c2-4b9d-a9f1-619b96f6ad59" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="false" name="EquipmentLocation_CharacterEquipment_fk" physicalName="equipmentlocation_characterequipment_fk" pk-table-ref="TAB27" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP145" populated="true" UUID="189fefc6-a10f-49ad-81e9-7d4b7a7b2b80" fk-column-ref="COL24" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL28" />
    </relationship>
-   <relationship id="REL135" populated="true" UUID="d295a8fd-0fe4-44bc-ba91-536ab66fa2f7" deferrability="7" deleteRule="3" fk-table-ref="TAB48" fkCardinality="7" identifying="false" name="Gear_CharacterGear_fk" physicalName="gear_charactergear_fk" pk-table-ref="TAB37" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP136" populated="true" UUID="80c949a4-0345-47da-89ce-74d3eb3a7eec" fk-column-ref="COL51" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL38" />
+   <relationship id="REL146" populated="true" UUID="d3b87529-0e95-445b-9306-1f4fe8c86918" deferrability="7" deleteRule="3" fk-table-ref="TAB14" fkCardinality="7" identifying="false" name="EquiptmentClass_Equipment_fk" physicalName="equiptmentclass_equipment_fk" pk-table-ref="TAB32" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP147" populated="true" UUID="c396326e-94d6-4f75-823a-80f406e2bb5d" fk-column-ref="COL17" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL33" />
    </relationship>
-   <relationship id="REL137" populated="true" UUID="6d8c3588-ed0e-4032-9582-bc1d4472e30f" deferrability="7" deleteRule="3" fk-table-ref="TAB37" fkCardinality="7" identifying="false" name="GearClass_Gear_fk" physicalName="gearclass_gear_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP138" populated="true" UUID="1f06b5c1-fcd5-4b45-894c-ad8e4b53be2e" fk-column-ref="COL40" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
+   <relationship id="REL148" populated="true" UUID="d295a8fd-0fe4-44bc-ba91-536ab66fa2f7" deferrability="7" deleteRule="3" fk-table-ref="TAB48" fkCardinality="7" identifying="false" name="Gear_CharacterGear_fk" physicalName="gear_charactergear_fk" pk-table-ref="TAB37" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP149" populated="true" UUID="80c949a4-0345-47da-89ce-74d3eb3a7eec" fk-column-ref="COL51" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL38" />
    </relationship>
-   <relationship id="REL139" populated="true" UUID="cd90db52-f8c7-4e8a-9de6-c71d69b6dcfe" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="CharacterClass_GameCharacter_fk" physicalName="characterclass_gamecharacter_fk" pk-table-ref="TAB54" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP140" populated="true" UUID="c34068db-c3b9-4031-bb98-c77e0e303449" fk-column-ref="COL6" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL55" />
+   <relationship id="REL150" populated="true" UUID="6d8c3588-ed0e-4032-9582-bc1d4472e30f" deferrability="7" deleteRule="3" fk-table-ref="TAB37" fkCardinality="7" identifying="false" name="GearClass_Gear_fk" physicalName="gearclass_gear_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP151" populated="true" UUID="1f06b5c1-fcd5-4b45-894c-ad8e4b53be2e" fk-column-ref="COL40" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
    </relationship>
-   <relationship id="REL141" populated="true" UUID="94a669fc-5946-49df-b26d-d21fb92fb434" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="CharacterRace_GameCharacter_fk" physicalName="characterrace_gamecharacter_fk" pk-table-ref="TAB59" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP142" populated="true" UUID="7515bb51-3f20-4c1c-93d2-f1c6145f0359" fk-column-ref="COL7" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL60" />
+   <relationship id="REL152" populated="true" UUID="cd90db52-f8c7-4e8a-9de6-c71d69b6dcfe" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="CharacterClass_GameCharacter_fk" physicalName="characterclass_gamecharacter_fk" pk-table-ref="TAB54" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP153" populated="true" UUID="c34068db-c3b9-4031-bb98-c77e0e303449" fk-column-ref="COL6" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL55" />
    </relationship>
-   <relationship id="REL143" populated="true" UUID="35c4cbc5-c8ac-4b1d-bbe0-fbdea7a27c3f" deferrability="7" deleteRule="3" fk-table-ref="TAB70" fkCardinality="7" identifying="false" name="Armor_CharacterArmor_fk" physicalName="armor_characterarmor_fk" pk-table-ref="TAB64" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP144" populated="true" UUID="b6b8e3e7-80de-48ce-a992-75bdbf6f584d" fk-column-ref="COL73" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL65" />
+   <relationship id="REL154" populated="true" UUID="94a669fc-5946-49df-b26d-d21fb92fb434" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="CharacterRace_GameCharacter_fk" physicalName="characterrace_gamecharacter_fk" pk-table-ref="TAB59" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP155" populated="true" UUID="7515bb51-3f20-4c1c-93d2-f1c6145f0359" fk-column-ref="COL7" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL60" />
    </relationship>
-   <relationship id="REL145" populated="true" UUID="58ad9222-3f91-4bb4-a2a9-4bb5fa1aeafe" deferrability="7" deleteRule="3" fk-table-ref="TAB64" fkCardinality="7" identifying="false" name="ArmorClass_Armor_fk" physicalName="armorclass_armor_fk" pk-table-ref="TAB76" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP146" populated="true" UUID="9bb5d176-04d7-4d7b-a4e7-cc0c17474a32" fk-column-ref="COL67" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL77" />
+   <relationship id="REL156" populated="true" UUID="35c4cbc5-c8ac-4b1d-bbe0-fbdea7a27c3f" deferrability="7" deleteRule="3" fk-table-ref="TAB70" fkCardinality="7" identifying="false" name="Armor_CharacterArmor_fk" physicalName="armor_characterarmor_fk" pk-table-ref="TAB64" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP157" populated="true" UUID="b6b8e3e7-80de-48ce-a992-75bdbf6f584d" fk-column-ref="COL73" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL65" />
    </relationship>
-   <relationship id="REL147" populated="true" UUID="d9838fcf-38d6-4003-a88d-22fe6648e4ea" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="CharacterBackground_GameCharacter_fk" physicalName="characterbackground_gamecharacter_fk" pk-table-ref="TAB81" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP148" populated="true" UUID="f59d635a-8e81-43eb-bc99-0eaeb3427b95" fk-column-ref="COL8" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL82" />
+   <relationship id="REL158" populated="true" UUID="58ad9222-3f91-4bb4-a2a9-4bb5fa1aeafe" deferrability="7" deleteRule="3" fk-table-ref="TAB64" fkCardinality="7" identifying="false" name="ArmorClass_Armor_fk" physicalName="armorclass_armor_fk" pk-table-ref="TAB76" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP159" populated="true" UUID="9bb5d176-04d7-4d7b-a4e7-cc0c17474a32" fk-column-ref="COL67" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL77" />
    </relationship>
-   <relationship id="REL149" populated="true" UUID="6fa99530-d6c6-4151-bfef-402ddc83fae9" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="Skills_GameCharacter_fk" physicalName="skills_gamecharacter_fk" pk-table-ref="TAB86" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP150" populated="true" UUID="c5399a12-b124-43f3-be46-1ab779230e3b" fk-column-ref="COL9" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL87" />
+   <relationship id="REL160" populated="true" UUID="d9838fcf-38d6-4003-a88d-22fe6648e4ea" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="CharacterBackground_GameCharacter_fk" physicalName="characterbackground_gamecharacter_fk" pk-table-ref="TAB81" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP161" populated="true" UUID="f59d635a-8e81-43eb-bc99-0eaeb3427b95" fk-column-ref="COL8" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL82" />
    </relationship>
-   <relationship id="REL151" populated="true" UUID="65fdf6bb-7f25-44b7-a189-a240c59dd244" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="SavingThrows_GameCharacter_fk" physicalName="savingthrows_gamecharacter_fk" pk-table-ref="TAB108" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP152" populated="true" UUID="c34b8667-5423-4eb3-b051-1e81ede05a43" fk-column-ref="COL10" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL109" />
+   <relationship id="REL162" populated="true" UUID="6fa99530-d6c6-4151-bfef-402ddc83fae9" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="Skills_GameCharacter_fk" physicalName="skills_gamecharacter_fk" pk-table-ref="TAB86" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP163" populated="true" UUID="c5399a12-b124-43f3-be46-1ab779230e3b" fk-column-ref="COL9" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL87" />
    </relationship>
-   <relationship id="REL153" populated="true" UUID="abcd2f6f-f9f8-4360-91bd-efa4c598b5e9" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="CharacterAlignment_GameCharacter_fk" physicalName="characteralignment_gamecharacter_fk" pk-table-ref="TAB118" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP154" populated="true" UUID="01ae351e-9751-435e-8cb9-660f261771d4" fk-column-ref="COL11" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL119" />
+   <relationship id="REL164" populated="true" UUID="65fdf6bb-7f25-44b7-a189-a240c59dd244" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="SavingThrows_GameCharacter_fk" physicalName="savingthrows_gamecharacter_fk" pk-table-ref="TAB108" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP165" populated="true" UUID="c34b8667-5423-4eb3-b051-1e81ede05a43" fk-column-ref="COL10" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL109" />
+   </relationship>
+   <relationship id="REL166" populated="true" UUID="abcd2f6f-f9f8-4360-91bd-efa4c598b5e9" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="CharacterAlignment_GameCharacter_fk" physicalName="characteralignment_gamecharacter_fk" pk-table-ref="TAB118" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP167" populated="true" UUID="01ae351e-9751-435e-8cb9-660f261771d4" fk-column-ref="COL11" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL119" />
+   </relationship>
+   <relationship id="REL168" populated="true" UUID="1dd80193-0976-400e-bd71-073b9f28de38" deferrability="7" deleteRule="3" fk-table-ref="TAB128" fkCardinality="7" identifying="false" name="Spell_CharacterSpell_fk" physicalName="spell_characterspell_fk" pk-table-ref="TAB123" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP169" populated="true" UUID="51f887d3-aade-46ba-8e93-c92b5a81abb9" fk-column-ref="COL131" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL124" />
    </relationship>
   </relationships>
  </target-database>
  <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="0.707106781186547" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.707106781186547" viewportX="164" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="862" y="79" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB14" x="400" y="882" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB20" x="366" y="654" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
@@ -533,22 +582,26 @@
   <table-pane table-ref="TAB86" x="93" y="25" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB108" x="387" y="247" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB118" x="1114" y="516" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL123" pkConnection="0.05434782608695652" fkConnection="0.4418604651162791" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL129" pkConnection="0.4980392156862745" fkConnection="0.42524916943521596" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL131" pkConnection="0.49206349206349204" fkConnection="0.43157894736842106" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL133" pkConnection="0.35356200527704484" fkConnection="0.6881720430107527" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL137" pkConnection="0.32732732732732733" fkConnection="0.7177914110429447" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL135" pkConnection="0.18241042345276873" fkConnection="0.7227138643067846" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL125" pkConnection="0.5130434782608696" fkConnection="0.47368421052631576" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL139" pkConnection="0.23423423423423423" fkConnection="0.968944099378882" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL141" pkConnection="0.3867069486404834" fkConnection="0.7360248447204969" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL143" pkConnection="0.4432234432234432" fkConnection="0.5443425076452599" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL127" pkConnection="0.6" fkConnection="0.3263157894736842" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL145" pkConnection="0.3592233009708738" fkConnection="0.6824324324324325" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL147" pkConnection="0.5071090047393365" fkConnection="0.2369146005509642" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL149" pkConnection="0.43855421686746987" fkConnection="0.6820512820512821" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL151" pkConnection="0.24571428571428572" fkConnection="0.7441860465116279" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL153" pkConnection="0.4235294117647059" fkConnection="0.7162534435261708" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-pane table-ref="TAB123" x="1978" y="766" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB128" x="1670" y="516" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL134" pkConnection="0.05434782608695652" fkConnection="0.4418604651162791" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL142" pkConnection="0.4980392156862745" fkConnection="0.42524916943521596" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL144" pkConnection="0.49206349206349204" fkConnection="0.43157894736842106" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL146" pkConnection="0.35356200527704484" fkConnection="0.6881720430107527" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL150" pkConnection="0.32732732732732733" fkConnection="0.7177914110429447" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL148" pkConnection="0.18241042345276873" fkConnection="0.7227138643067846" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL136" pkConnection="0.5130434782608696" fkConnection="0.47368421052631576" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL152" pkConnection="0.23423423423423423" fkConnection="0.968944099378882" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL154" pkConnection="0.3867069486404834" fkConnection="0.7360248447204969" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL156" pkConnection="0.4432234432234432" fkConnection="0.5443425076452599" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL138" pkConnection="0.6" fkConnection="0.3263157894736842" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL158" pkConnection="0.3592233009708738" fkConnection="0.6824324324324325" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL160" pkConnection="0.5071090047393365" fkConnection="0.2369146005509642" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL162" pkConnection="0.43855421686746987" fkConnection="0.6820512820512821" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL164" pkConnection="0.24571428571428572" fkConnection="0.7441860465116279" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL166" pkConnection="0.4235294117647059" fkConnection="0.7162534435261708" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL168" pkConnection="0.3319838056680162" fkConnection="0.6285714285714286" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL140" pkConnection="0.8595744680851064" fkConnection="0.0" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="129"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">

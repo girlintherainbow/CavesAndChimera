@@ -1,8 +1,6 @@
 package controllers;
 
-import models.CharacterDetail;
-import models.CharacterRace;
-import models.GameCharacter;
+import models.*;
 import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
@@ -62,9 +60,30 @@ public class CharacterController extends Controller
 
 
 
-        return ok(views.html.character.render(details));
+      String sqlEquip ="SELECT NEW models.CharacterEquipment(ce.characterEquipmentID, ce.gameCharacterID, " +
+              " e.equipmentID, e.equipmentName, e.equipmentCost, " +
+              "e.equipmentDamage, e.equipmentWeight, e.equipmentProperties, e.equipmentLocationID) " +
+              "From Equipment e JOIN CharacterEquipment ce ON e.equipmentID = ce.equipmentID " +
+              "WHERE gameCharacterID = :gameCharacterID " ;
+
+        List<CharacterEquipment> equipment = jpaApi.em().
+                createQuery(sqlEquip,CharacterEquipment.class)
+                .setParameter("gameCharacterID",gameCharacterID).getResultList();
+
+        String sqlGear = "SELECT NEW models.CharacterGear(cg.characterGearID, cg.gameCharacterID, g.gearID," +
+                " g.gearName, g.gearCost, g.gearWeight, g.gearClassID) " +
+                " FROM Gear g JOIN CharacterGear cg on g.gearID = cg.gearID " +
+                "WHERE gameCharacterID = :gameCharacterID ";
+
+
+        List<CharacterGear> gear = jpaApi.em().
+                createQuery(sqlGear, CharacterGear.class).
+                setParameter("gameCharacterID",gameCharacterID).getResultList();
+
+
+        return ok(views.html.character.render(details,equipment,gear));
     }
-/*
+
     @Transactional
     public Result postGameCharacter()
     {
@@ -98,20 +117,4 @@ public class CharacterController extends Controller
 
          return redirect(routes.CharacterController.getGameCharacters());
     }
-
-   @Transactional
-    public Result postGameCharacter(int gameCharacterID)
-    {
-        GameCharacter gameCharacter =jpaApi.em().
-                createQuery("Select gc From GameCharacter gc where gameCharacterID = :gameCharacterID").
-                setParameter("gameCharacterID", gameCharacterID).getSingleResult();
-
-        DynamicForm form = formFactory.form().bindFromRequest();
-        String characterName = form.get("characterName");
-
-        gameCharacter.setCharacterName(characterName);
-
-    }
-*/
-
 }
