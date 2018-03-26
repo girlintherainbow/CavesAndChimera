@@ -105,36 +105,29 @@ public class CharacterController extends Controller
     }
 
     @Transactional
-    public Result postGameCharacter()
-    {
-        GameCharacter gameCharacter = jpaApi.em().
-                createQuery("SELECT gc FROM GameCharacter gc WHERE", GameCharacter.class).
+    public Result postGameCharacter(int gameCharacterID)
+    { String sql ="SELECT NEW models.CharacterDetail(gc.gameCharacterID, gc.characterName, gc.characterLevel," +
+            " cr.characterRaceName, cc.characterClassName, " +
+            "cb.characterBackgroundName, ca.alignmentName, gc.strength," +
+            "gc.strengthMod, gc.dexterity, gc.dexMod, gc.constitution," +
+            "gc.conMod, gc.intelligence, gc.intelMod, gc.wisdom," +
+            "gc.wisMod, gc.charisma, gc.charMod, gc.passiveWisdomPerception) " +
+            "FROM CharacterRace cr " +
+            "JOIN GameCharacter gc ON cr.characterRaceID = gc.characterRaceID " +
+            "JOIN CharacterClass cc ON cc.characterClassID = gc.characterClassID "+
+            "JOIN CharacterBackground cb ON cb.characterBackgroundID = gc.characterBackgroundID "+
+            "JOIN CharacterAlignment ca ON ca.alignmentID = gc.alignmentID "+
+            "WHERE gameCharacterID = :gameCharacterID " ;
+        CharacterDetail details = jpaApi.em().
+                createQuery(sql, CharacterDetail.class).setParameter("gameCharacterID", gameCharacterID).
                 getSingleResult();
 
         DynamicForm form = formFactory.form().bindFromRequest();
-         int gameCharacterID = new Integer(form.get("gameCharacterID"));
-         String characterName;
-         String characterLevel;
-         int characterRaceID;
-         int characterClassId;
-         int characterBackgroundID;
-         int alignmentID;
-         int strength;
-         int strengthMod;
-         int dexterity;
-         int dexMod;
-         int constitution;
-         int conMod;
-         int intelligence;
-         int intelMod;
-         int wisdom;
-         int wisMod;
-         int charisma;
-         int charMod;
-         int passiveWisdomPerception;
+        String characterName = form.get("characterName");
 
-         gameCharacter.setGameCharacterID(gameCharacterID);
+        details.setCharacterName(characterName);
+        jpaApi.em().persist(details);
 
-         return redirect(routes.CharacterController.getGameCharacters());
+        return redirect(routes.CharacterController.getGameCharacters());
     }
 }
