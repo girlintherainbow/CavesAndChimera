@@ -5,6 +5,6 @@
 GET     /activecharacters              controllers.CharacterController.getGameCharacters
 
 GET    /character/:id                      controllers.CharacterController.getGameCharacter(id:Integer)
-POST   /character/:id                       controllers.CharacterController.getGameCharacter(id:Integer)
+POST   /character/:id                       controllers.CharacterController.postGameCharacter(id:Integer)
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

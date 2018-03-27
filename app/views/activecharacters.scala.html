@@ -23,7 +23,7 @@
                 <tbody>
                @for(character <- characters){
                <tr>
-                    <td>@character.getCharacterName()</td>
+                    <td><a href="character/@character.getGameCharacterID"> @character.getCharacterName()</a></td>
                </tr>
                }
                 </tbody>
