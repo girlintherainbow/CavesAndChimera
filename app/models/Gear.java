@@ -11,7 +11,18 @@ public class Gear
     private String gearName;
     private String gearCost;
     private int gearWeight;
-    private int gearClassID;
+
+    public Gear(int gearID, String gearName, String gearCost, int gearWeight, int gearClassID)
+    {
+        this.gearID = gearID;
+        this.gearName = gearName;
+        this.gearCost = gearCost;
+        this.gearWeight = gearWeight;
+        this.gearClassID = gearClassID;
+    }
+
+    private int gearClassID
+            ;
 
     public int getGearID()
     {

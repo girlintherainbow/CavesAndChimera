@@ -1,4 +1,6 @@
-@(details : CharacterDetail, equipments : List[CharacterEquipment], gears : List[CharacterGear], spells : List[CharacterSpell], notes : List[CharacterNotes])
+@(details : CharacterDetail, equipments : List[CharacterEquipment],
+gears : List[CharacterGear], spells : List[CharacterSpell],
+notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[Gear])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -83,30 +85,47 @@ Skills:
      </p>
 
     Weapons:
-    <div class="container">
-        <table class = "table table-striped">
-            <thead>
-            <tr>
-                <th>Weapon Name</th>
-                <th>Damage</th>
-                <th>Weight</th>
-                <th>Properties</th>
-                <th>Cost</th>
-            </tr>
-            </thead>
-            <tbody>
-            @for(equipment <- equipments){
-            <tr>
-            <td>@equipment.getEquipmentName</td>
-                <td>@equipment.getEquipmentDamage</td>
-                <td>@equipment.getEquipmentWeight</td>
-                <td>@equipment.getEquipmentProperties</td>
-                <td>@equipment.getEquipmentCost</td>
-            </tr>
-            }
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="container">
+                <table class = "table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Weapon Name</th>
+                        <th>Damage</th>
+                        <th>Weight</th>
+                        <th>Properties</th>
+                        <th>Cost</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for(equipment <- equipments){
+                    <tr>
+                    <td>@equipment.getEquipmentName</td>
+                        <td>@equipment.getEquipmentDamage</td>
+                        <td>@equipment.getEquipmentWeight</td>
+                        <td>@equipment.getEquipmentProperties</td>
+                        <td>@equipment.getEquipmentCost</td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+                <form method="post" action="/AddWeapon">
+                    <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
+                <select name="equipmentID">
+                    @for(weapons <- equipmentList){
+                    <option value="@weapons.getEquipmentID()">@weapons.getEquipmentName()</option>
+                    }
+                </select>
+                    @CSRF.formField
+                    <td><input type="Submit" value="Add"> </td>
+                </form>
+            </div>
+
+        </div>
     </div>
+
+
     <p>
 
 
@@ -131,6 +150,16 @@ Skills:
             }
             </tbody>
         </table>
+        <form method="post" action="/AddGear">
+            <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
+            <select name="gearID">
+                @for(newGear <- gearList){
+                <option value="@newGear.getGearID()">@newGear.getGearName()</option>
+                }
+            </select>
+            @CSRF.formField
+            <td><input type="Submit" value="Add"> </td>
+        </form>
     </div>
     <p>
 
@@ -164,6 +193,16 @@ Skills:
             }
             </tbody>
         </table>
+        <form method="post" action="/AddGear">
+            <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
+            <select name="gearID">
+                @for(newGear <- gearList){
+                <option value="@newGear.getGearID()">@newGear.getGearName()</option>
+                }
+            </select>
+            @CSRF.formField
+            <td><input type="Submit" value="Add"> </td>
+        </form>
     </div>
     <p>
 

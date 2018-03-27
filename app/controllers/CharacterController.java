@@ -10,7 +10,10 @@ import play.mvc.Result;
 import views.html.homepage;
 
 import javax.inject.Inject;
+import javax.persistence.Table;
 import java.util.List;
+
+import static javax.swing.text.html.HTML.Tag.SELECT;
 
 public class CharacterController extends Controller
 {
@@ -100,8 +103,16 @@ public class CharacterController extends Controller
                 createQuery(sqlNotes, CharacterNotes.class).
                 setParameter("gameCharacterID", gameCharacterID).getResultList();
 
+    List<Equipment> equipmentList = jpaApi.em().
+            createQuery("SELECT NEW models.Equipment(equipmentID, equipmentName, equipmentCost, equipmentDamage," +
+                    "equipmentWeight, equipmentProperties, equipmentClassID, equipmentLocationID) " +
+                    "FROM Equipment", Equipment.class).getResultList();
 
-        return ok(views.html.character.render(details,equipment,gear,spell,note));
+    List<Gear> gearList = jpaApi.em().
+            createQuery("SELECT NEW models.Gear(gearID, gearName, gearCost, gearWeight, gearClassID)" +
+                    "FROM Gear", Gear.class).getResultList();
+
+        return ok(views.html.character.render(details,equipment,gear,spell,note, equipmentList, gearList));
     }
 
     @Transactional
@@ -123,10 +134,47 @@ public class CharacterController extends Controller
                 getSingleResult();
 
         DynamicForm form = formFactory.form().bindFromRequest();
-        String characterName = form.get("characterName");
+        String equipmentName = form.get("equipmentName");
 
-        details.setCharacterName(characterName);
+        details.setCharacterName(equipmentName);
         jpaApi.em().persist(details);
+
+        return redirect(routes.CharacterController.getGameCharacters());
+    }
+    @Transactional
+    public Result postAddWeapon()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int equipmentID = new Integer(form.get("equipmentID"));
+        int gameCharacterID = new Integer(form.get("gameCharacterID"));
+
+        CharacterEquipmentLink characterEquipmentLink = new CharacterEquipmentLink();
+
+        characterEquipmentLink.setEquipmentID(equipmentID);
+        characterEquipmentLink.setGameCharacterID(gameCharacterID);
+
+        characterEquipmentLink.setEquipmentLocationID(2);
+
+        jpaApi.em().persist(characterEquipmentLink);
+
+
+        return redirect(routes.CharacterController.getGameCharacters());
+
+    }
+
+    @Transactional
+    public Result postAddGear()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int gearID = new Integer(form.get("gearID"));
+        int gameCharacterID = new Integer(form.get("gameCharacterID"));
+
+        CharacterGearLink characterGearLink = new CharacterGearLink();
+
+        characterGearLink.setGearID(gearID);
+        characterGearLink.setGameCharacterID(gameCharacterID);
+
+        jpaApi.em().persist(characterGearLink);
 
         return redirect(routes.CharacterController.getGameCharacters());
     }
