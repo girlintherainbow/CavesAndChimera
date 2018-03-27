@@ -163,7 +163,7 @@ public class CharacterController extends Controller
         jpaApi.em().persist(characterEquipmentLink);
 
 
-        return redirect(routes.CharacterController.getGameCharacters());
+        return redirect(routes.CharacterController.getGameCharacter(gameCharacterID));
 
     }
 
@@ -181,24 +181,24 @@ public class CharacterController extends Controller
 
         jpaApi.em().persist(characterGearLink);
 
-        return redirect(routes.CharacterController.getGameCharacters());
+        return redirect(routes.CharacterController.getGameCharacter(gameCharacterID));
     }
     @Transactional
     public Result postAddSpell()
     {
         DynamicForm form = formFactory.form().bindFromRequest();
-        int characterSpellID = new Integer(form.get("characterSpellID"));
+
         int spellID = new Integer(form.get("spellID"));
         int gameCharacterID = new Integer(form.get("gameCharacterID"));
 
         CharacterSpellLink characterSpellLink = new CharacterSpellLink();
 
-        characterSpellLink.setCharacterSpellID(characterSpellID);
+
         characterSpellLink.setSpellID(spellID);
         characterSpellLink.setGameCharacterID(gameCharacterID);
 
         jpaApi.em().persist(characterSpellLink);
 
-        return redirect(routes.CharacterController.getGameCharacters());
+        return redirect(routes.CharacterController.getGameCharacter(gameCharacterID));
     }
 }
