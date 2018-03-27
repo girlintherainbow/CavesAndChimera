@@ -106,13 +106,18 @@ public class CharacterController extends Controller
     List<Equipment> equipmentList = jpaApi.em().
             createQuery("SELECT NEW models.Equipment(equipmentID, equipmentName, equipmentCost, equipmentDamage," +
                     "equipmentWeight, equipmentProperties, equipmentClassID, equipmentLocationID) " +
-                    "FROM Equipment", Equipment.class).getResultList();
+                    "FROM Equipment ORDER BY equipmentName", Equipment.class).getResultList();
 
     List<Gear> gearList = jpaApi.em().
             createQuery("SELECT NEW models.Gear(gearID, gearName, gearCost, gearWeight, gearClassID)" +
-                    "FROM Gear", Gear.class).getResultList();
+                    "FROM Gear ORDER BY gearName", Gear.class).getResultList();
 
-        return ok(views.html.character.render(details,equipment,gear,spell,note, equipmentList, gearList));
+    List<Spell> spellList = jpaApi.em().
+            createQuery("SELECT NEW models.Spell(spellID, spellName, spellLevel, " +
+                    "castingTime, duration, range_Area, attack_Save, " +
+                    "damage_Effect) FROM Spell ORDER BY spellName", Spell.class).getResultList();
+
+        return ok(views.html.character.render(details,equipment,gear,spell,note, equipmentList, gearList, spellList));
     }
 
     @Transactional
@@ -175,6 +180,24 @@ public class CharacterController extends Controller
         characterGearLink.setGameCharacterID(gameCharacterID);
 
         jpaApi.em().persist(characterGearLink);
+
+        return redirect(routes.CharacterController.getGameCharacters());
+    }
+    @Transactional
+    public Result postAddSpell()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int characterSpellID = new Integer(form.get("characterSpellID"));
+        int spellID = new Integer(form.get("spellID"));
+        int gameCharacterID = new Integer(form.get("gameCharacterID"));
+
+        CharacterSpellLink characterSpellLink = new CharacterSpellLink();
+
+        characterSpellLink.setCharacterSpellID(characterSpellID);
+        characterSpellLink.setSpellID(spellID);
+        characterSpellLink.setGameCharacterID(gameCharacterID);
+
+        jpaApi.em().persist(characterSpellLink);
 
         return redirect(routes.CharacterController.getGameCharacters());
     }

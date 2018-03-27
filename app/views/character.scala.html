@@ -1,6 +1,6 @@
 @(details : CharacterDetail, equipments : List[CharacterEquipment],
 gears : List[CharacterGear], spells : List[CharacterSpell],
-notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[Gear])
+notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[Gear], spellList : List[Spell])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -193,11 +193,11 @@ Skills:
             }
             </tbody>
         </table>
-        <form method="post" action="/AddGear">
+        <form method="post" action="/AddSpell">
             <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
-            <select name="gearID">
-                @for(newGear <- gearList){
-                <option value="@newGear.getGearID()">@newGear.getGearName()</option>
+            <select name="spellID">
+                @for(newSpell <- spellList){
+                <option value="@newSpell.getSpellID()">@newSpell.getSpellName()</option>
                 }
             </select>
             @CSRF.formField
@@ -207,7 +207,7 @@ Skills:
     <p>
 
     </p>
-    Notes:
+    Background Notes:
     <div class="container">
         <table class = "table table-striped">
             <thead>
