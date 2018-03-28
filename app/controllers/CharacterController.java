@@ -225,7 +225,11 @@ public class CharacterController extends Controller
                 createQuery("SELECT ca FROM CharacterAlignment ca " +
                         "ORDER BY alignmentID").getResultList();
 
-        return ok(views.html.newcharacter.render(races, classes, backgrounds, alignments));
+        List<Equipment> equipments =jpaApi.em().
+                createQuery("SELECT e FROM Equipment e " +
+                        "ORDER BY equipmentName").getResultList();
+
+        return ok(views.html.newcharacter.render(races, classes, backgrounds, alignments, equipments));
     }
     @Transactional
     public Result postNewCharacter()

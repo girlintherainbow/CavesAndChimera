@@ -1,5 +1,5 @@
 @(races : List[CharacterRace], classes : List[CharacterClass], backgrounds : List[CharacterBackground],
-alignments : List[CharacterAlignment])
+alignments : List[CharacterAlignment], equipments : List[Equipment])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -182,6 +182,39 @@ alignments : List[CharacterAlignment])
         </td>
         </tbody>
     </table>
+
+    <h4>Weapons</h4>
+<table>
+    <th>Weapon</th>
+    <tr>
+    <td>
+        <select name="equipmentID">
+            @for(equipment <- equipments){
+            <option value="@equipment.getEquipmentID()">@equipment.getEquipmentName()</option>
+            }
+        </select>
+    </td>
+    </tr>
+</table>
+    Background Notes:
+        <table class = "table table-striped">
+            <thead>
+            <tr>
+                <th>Personality Traits</th>
+                <th>Ideals</th>
+                <th>Bonds</th>
+                <th>Flaws</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="text" name="Personality Traits"></td>
+                <td><input type="text" name="Ideals"></td>
+                <td><input type="text" name="Bonds"></td>
+                <td><input type="text" name="Flaws"></td>
+            </tr>
+            </tbody>
+        </table>
     @CSRF.formField
     <td><input type="Submit" value = "Add Character"></td>
 </form>

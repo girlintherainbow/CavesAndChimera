@@ -16,6 +16,11 @@ public class Equipment
    private int equipmentClassID;
    private int equipmentLocationID;
 
+   public Equipment ()
+   {
+
+   }
+
    public Equipment(int equipmentID, String equipmentName, String equipmentCost, String equipmentDamage, int equipmentWeight, String equipmentProperties, int equipmentClassID, int equipmentLocationID)
    {
       this.equipmentID = equipmentID;
