@@ -6,36 +6,6 @@ import javax.persistence.Id;
 @Entity
 public class GameCharacter
 {
-    /*
-    public GameCharacter(int gameCharacterIDString characterName, String characterLevel,
-                         int characterRaceID, int characterClassID, int characterBackgroundID,
-                         int alignmentID, int strength, int strengthMod, int dexterity, int dexMod,
-                         int constitution, int conMod, int intelligence, int intelMod, int wisdom, int wisMod,
-                         int charisma, int charMod, int passiveWisdomPerception)
-    {
-        this.gameCharacterID = gameCharacterID;
-       this.characterName = characterName;
-        this.characterLevel = characterLevel;
-        this.characterRaceID = characterRaceID;
-        this.characterClassID = characterClassID;
-        this.characterBackgroundID = characterBackgroundID;
-        this.alignmentID = alignmentID;
-        this.strength = strength;
-        this.strengthMod = strengthMod;
-        this.dexterity = dexterity;
-       this.dexMod = dexMod;
-        this.constitution = constitution;
-        this.conMod = conMod;
-        this.intelligence = intelligence;
-        this.intelMod = intelMod;
-        this.wisdom = wisdom;
-       this.wisMod = wisMod;
-       this.charisma = charisma;
-        this.charMod = charMod;
-        this.passiveWisdomPerception = passiveWisdomPerception;
-
-    }
-*/
     @Id
     private int gameCharacterID;
     private String characterName;
@@ -57,6 +27,40 @@ public class GameCharacter
     private int charisma;
     private int charMod;
     private int passiveWisdomPerception;
+
+    public GameCharacter()
+    {
+
+    }
+
+    public GameCharacter(int gameCharacterID, String characterName, String characterLevel,
+                         int characterRaceID, int characterClassID, int characterBackgroundID,
+                         int alignmentID, int strength, int strengthMod, int dexterity,
+                         int dexMod, int constitution, int conMod, int intelligence,
+                         int intelMod, int wisdom, int wisMod, int charisma, int charMod,
+                         int passiveWisdomPerception)
+    {
+        this.gameCharacterID = gameCharacterID;
+        this.characterName = characterName;
+        this.characterLevel = characterLevel;
+        this.characterRaceID = characterRaceID;
+        this.characterClassID = characterClassID;
+        this.characterBackgroundID = characterBackgroundID;
+        this.alignmentID = alignmentID;
+        this.strength = strength;
+        this.strengthMod = strengthMod;
+        this.dexterity = dexterity;
+        this.dexMod = dexMod;
+        this.constitution = constitution;
+        this.conMod = conMod;
+        this.intelligence = intelligence;
+        this.intelMod = intelMod;
+        this.wisdom = wisdom;
+        this.wisMod = wisMod;
+        this.charisma = charisma;
+        this.charMod = charMod;
+        this.passiveWisdomPerception = passiveWisdomPerception;
+    }
 
     public int getGameCharacterID()
     {

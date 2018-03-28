@@ -1,0 +1,45 @@
+@(races : List[CharacterRace])
+@import helper._
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<h1>Create Your New Character:</h1>
+</head>
+<body>
+
+<form method="post">
+    <table border="1">
+        <th>Character Name: </th>
+        <tr>
+            <td>
+                <input type="text" name="Name">
+            </td>
+        </tr>
+    </table>
+
+    <h4>Character Info: </h4>
+        <table border="1">
+            <th>Level</th>
+            <th>Race</th>
+
+            <tr>
+                <td>
+                    <input type="text" name="Level">
+                </td>
+
+                <td>
+                    <select name="characterRaceID">
+                        @for(race <- races){
+                        <option value="@race.getCharacterRaceID()">@race.getCharacterRaceName()</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+        </table>
+    @CSRF.formField
+    <td><input type="Submit" value = "Add Character"></td>
+</form>
+</body>
+</html>

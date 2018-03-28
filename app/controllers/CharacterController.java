@@ -201,4 +201,21 @@ public class CharacterController extends Controller
 
         return redirect(routes.CharacterController.getGameCharacter(gameCharacterID));
     }
-}
+
+   @Transactional (readOnly = true)
+    public Result getNewCharacter()
+    {
+
+        DynamicForm form = formFactory.form().bindFromRequest();
+
+        List<CharacterRace> races =jpaApi.em().
+                createQuery("SELECT cr FROM CharacterRace cr ORDER BY characterRaceName").getResultList();
+
+        return ok(views.html.newcharacter.render(races));
+    }
+    @Transactional
+    public Result postNewCharacter()
+    {
+        return redirect(routes.CharacterController.getGameCharacters());
+    }
+    }
