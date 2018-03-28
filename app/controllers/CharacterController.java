@@ -209,9 +209,23 @@ public class CharacterController extends Controller
         DynamicForm form = formFactory.form().bindFromRequest();
 
         List<CharacterRace> races =jpaApi.em().
-                createQuery("SELECT cr FROM CharacterRace cr ORDER BY characterRaceName").getResultList();
+                createQuery("SELECT cr FROM CharacterRace cr" +
+                        " ORDER BY characterRaceName").getResultList();
 
-        return ok(views.html.newcharacter.render(races));
+        List<CharacterClass> classes =jpaApi.em().
+                createQuery("SELECT cc FROM CharacterClass cc " +
+                        "ORDER BY characterClassName").getResultList();
+
+
+        List<CharacterBackground> backgrounds =jpaApi.em().
+                createQuery("SELECT cb FROM CharacterBackground cb " +
+                        "ORDER BY characterBackgroundName").getResultList();
+
+        List<CharacterAlignment> alignments =jpaApi.em().
+                createQuery("SELECT ca FROM CharacterAlignment ca " +
+                        "ORDER BY alignmentID").getResultList();
+
+        return ok(views.html.newcharacter.render(races, classes, backgrounds, alignments));
     }
     @Transactional
     public Result postNewCharacter()

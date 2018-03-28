@@ -1,4 +1,5 @@
-@(races : List[CharacterRace])
+@(races : List[CharacterRace], classes : List[CharacterClass], backgrounds : List[CharacterBackground],
+alignments : List[CharacterAlignment])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,9 @@
         <table border="1">
             <th>Level</th>
             <th>Race</th>
+            <th>Class</th>
+            <th>Background</th>
+            <th>Alignment</th>
 
             <tr>
                 <td>
@@ -36,8 +40,148 @@
                         }
                     </select>
                 </td>
+
+                <td>
+                    <select name="characterClassID">
+                        @for(classs <- classes){
+                        <option value="@classs.getCharacterClassID()">@classs.getCharacterClassName()</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <select name="characterBackgroundID">
+                        @for(background <- backgrounds){
+                        <option value="@background.getCharacterBackgroundID()">@background.getCharacterBackgroundName()</option>
+                        }
+                    </select>
+                </td>
+
+                <td>
+                    <select name="alignmentID">
+                        @for(alignment <- alignments){
+                        <option value="@alignment.getAlignmentID()">@alignment.getAlignmentName()</option>
+                        }
+                    </select>
+                </td>
             </tr>
         </table>
+
+            <br>
+            Character Skills:
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>Strength</th>
+                    <th>Strength Mod</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <td>
+                        <input type="text" name="Strength">
+                    </td>
+                    <td>
+                        <input type="text" name="Strength Mod">
+                    </td>
+                </tbody>
+            </table>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Dexterity</th>
+            <th>Dex Mod</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+            <input type="text" name="Dexterity">
+        </td>
+        <td>
+            <input type="text" name="Dexterity">
+        </td>
+        </tbody>
+    </table>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Constitution</th>
+            <th>Const. Mod</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+            <input type="text" name="Constitution">
+        </td>
+        <td>
+            <input type="text" name="Const. Mod">
+        </td>
+        </tbody>
+    </table>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Intelligence</th>
+            <th>Intel. Mod</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+            <input type="text" name="Intelligence">
+        </td>
+        <td>
+            <input type="text" name="Intel Mod">
+        </td>
+        </tbody>
+    </table>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Wisdom</th>
+            <th>Wisdom Mod</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+            <input type="text" name="Wisdom">
+        </td>
+        <td>
+            <input type="text" name="Wisdom Mod">
+        </td>
+        </tbody>
+    </table>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Charisma</th>
+            <th>Char. Mod</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+            <input type="text" name="Charisma">
+        </td>
+        <td>
+            <input type="text" name="Char. Mod">
+        </td>
+        </tbody>
+    </table>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Passive Perception</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+            <input type="text" name="Passive Perception">
+        </td>
+        </tbody>
+    </table>
     @CSRF.formField
     <td><input type="Submit" value = "Add Character"></td>
 </form>

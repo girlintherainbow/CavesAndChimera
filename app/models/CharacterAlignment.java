@@ -10,6 +10,16 @@ public class CharacterAlignment
     private int alignmentID;
     private String alignmentName;
 
+    public CharacterAlignment()
+    {
+
+    }
+    public CharacterAlignment(int alignmentID, String alignmentName)
+    {
+        this.alignmentID = alignmentID;
+        this.alignmentName = alignmentName;
+    }
+
     public int getAlignmentID()
     {
         return alignmentID;
