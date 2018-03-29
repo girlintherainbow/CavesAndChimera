@@ -18,6 +18,10 @@ public class CharacterSpell
     private String attack_Save;
     private String damage_Effect;
 
+    public CharacterSpell()
+    {
+
+    }
     public CharacterSpell(int characterSpellID, int gameCharacterID, int spellID,
                           String spellName, int spellLevel, String castingTime, String duration,
                           String range_Area, String attack_Save, String damage_Effect)

@@ -16,7 +16,7 @@ POST /AddSpell                             controllers.CharacterController.postA
 
 
  GET   /newCharacter                        controllers.CharacterController.getNewCharacter
- #POST  /newCharacter                       controllers.CharacterController.postNewCharacter
+ POST  /newCharacter                       controllers.CharacterController.postNewCharacter
 
 
 # Map static resources from the /public folder to the /assets URL path

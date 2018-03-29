@@ -258,7 +258,7 @@ public class CharacterController extends Controller
         int strength = new Integer(form.get("strength"));
         int strengthMod = new Integer(form.get("strengthMod"));
         int dexterity = new Integer(form.get("dexterity"));
-        int dexMod = new Integer(form.get("dexterityMod"));
+        int dexMod = new Integer(form.get("dexMod"));
         int constitution = new Integer(form.get("constitution"));
         int conMod = new Integer(form.get("conMod"));
         int intelligence = new Integer(form.get("intelligence"));
@@ -268,12 +268,6 @@ public class CharacterController extends Controller
         int charisma = new Integer(form.get("charisma"));
         int charMod = new Integer(form.get("charMod"));
         int passiveWisdomPerception = new Integer(form.get("passiveWisdomPerception"));
-
-
-        String personalityTraits = form.get("personalityTraits");
-        String ideals = form.get("ideals");
-        String bonds = form.get("bonds");
-        String flaws = form.get("flaws");
 
         gameCharacter.setCharacterName(characterName);
         gameCharacter.setCharacterLevel(characterLevel);
@@ -297,16 +291,49 @@ public class CharacterController extends Controller
         gameCharacter.setPassiveWisdomPerception(passiveWisdomPerception);
 
 
+
         jpaApi.em().persist(gameCharacter);
 
 
-        CharacterEquipmentLink characterEquipment = new CharacterEquipmentLink();
+        CharacterEquipmentLink characterEquipmentID = new CharacterEquipmentLink();
 
-        int characterEquipmentID = new Integer(form.get("characterEquipmentLink"));
-        characterEquipment.setCharacterEquipmentID(characterEquipmentID);
+        int equipmentID = new Integer(form.get("equipmentID"));
+        characterEquipmentID.setEquipmentID(equipmentID);
 
-        jpaApi.em().persist(characterEquipment);
+        characterEquipmentID.setGameCharacterID(gameCharacter.getGameCharacterID());
+        jpaApi.em().persist(characterEquipmentID);
 
+
+        CharacterGearLink characterGearID = new CharacterGearLink();
+
+        int gearID = new Integer(form.get("gearID"));
+        characterGearID.setGearID(gearID);
+
+        characterGearID.setGameCharacterID(gameCharacter.getGameCharacterID());
+        jpaApi.em().persist(characterGearID);
+
+        CharacterSpellLink characterSpellID = new CharacterSpellLink();
+
+        int spellID = new Integer(form.get("spellID"));
+        characterSpellID.setSpellID(spellID);
+
+        characterSpellID.setGameCharacterID(gameCharacter.getGameCharacterID());
+        jpaApi.em().persist(characterSpellID);
+
+        CharacterNotes characterNotes = new CharacterNotes();
+
+        String personalityTraits = form.get("personalityTraits");
+        String ideals = form.get("ideals");
+        String bonds = form.get("bonds");
+        String flaws = form.get("flaws");
+
+        characterNotes.setPersonalityTraits(personalityTraits);
+        characterNotes.setIdeals(ideals);
+        characterNotes.setBonds(bonds);
+        characterNotes.setFlaws(flaws);
+
+        characterNotes.setGameCharacterID(gameCharacter.getGameCharacterID());
+        jpaApi.em().persist(characterNotes);
 
         return redirect(routes.CharacterController.getGameCharacters());
     }

@@ -219,7 +219,7 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], gears : Lis
     <th>Spell</th>
     <tr>
         <td>
-            <select name="gearID">
+            <select name="spellID">
                 @for(spell <- spells){
                 <option value="@spell.getSpellID()">@spell.getSpellName()</option>
                 }

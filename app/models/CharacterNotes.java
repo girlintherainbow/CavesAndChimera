@@ -14,6 +14,10 @@ public class CharacterNotes
     private String bonds;
     private String flaws;
 
+    public CharacterNotes()
+    {
+
+    }
     public CharacterNotes(int characterNoteID, int gameCharacterID, String personalityTraits, String ideals, String bonds, String flaws)
     {
         this.characterNoteID = characterNoteID;
