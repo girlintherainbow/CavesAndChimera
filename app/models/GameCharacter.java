@@ -1,12 +1,14 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class GameCharacter
 {
-    @Id
+    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int gameCharacterID;
     private String characterName;
     private String characterLevel;
@@ -38,7 +40,7 @@ public class GameCharacter
                          int alignmentID, int strength, int strengthMod, int dexterity,
                          int dexMod, int constitution, int conMod, int intelligence,
                          int intelMod, int wisdom, int wisMod, int charisma, int charMod,
-                         int passiveWisdomPerception)
+                         int passiveWisdomPerception, int characterEquipmentID)
     {
         this.gameCharacterID = gameCharacterID;
         this.characterName = characterName;
@@ -261,4 +263,5 @@ public class GameCharacter
     {
         this.passiveWisdomPerception = passiveWisdomPerception;
     }
+
 }

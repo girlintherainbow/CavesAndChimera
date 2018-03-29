@@ -16,6 +16,10 @@ public class Spell
     private String attack_Save;
     private String damage_Effect;
 
+    public Spell ()
+    {
+
+    }
     public Spell(int spellID, String spellName, int spellLevel, String castingTime, String duration, String range_Area, String attack_Save, String damage_Effect)
     {
         this.spellID = spellID;

@@ -1,5 +1,5 @@
 @(races : List[CharacterRace], classes : List[CharacterClass], backgrounds : List[CharacterBackground],
-alignments : List[CharacterAlignment], equipments : List[Equipment])
+alignments : List[CharacterAlignment], equipments : List[Equipment], gears : List[Gear], spells : List[Spell])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
         <th>Character Name: </th>
         <tr>
             <td>
-                <input type="text" name="Name">
+                <input type="text" name="characterName">
             </td>
         </tr>
     </table>
@@ -30,7 +30,7 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
 
             <tr>
                 <td>
-                    <input type="text" name="Level">
+                    <input type="text" name="characterLevel">
                 </td>
 
                 <td>
@@ -77,10 +77,10 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
                 </thead>
                 <tbody>
                     <td>
-                        <input type="text" name="Strength">
+                        <input type="text" name="strength">
                     </td>
                     <td>
-                        <input type="text" name="Strength Mod">
+                        <input type="text" name="strengthMod">
                     </td>
                 </tbody>
             </table>
@@ -94,10 +94,10 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
         </thead>
         <tbody>
         <td>
-            <input type="text" name="Dexterity">
+            <input type="text" name="dexterity">
         </td>
         <td>
-            <input type="text" name="Dexterity">
+            <input type="text" name="dexMod">
         </td>
         </tbody>
     </table>
@@ -111,10 +111,10 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
         </thead>
         <tbody>
         <td>
-            <input type="text" name="Constitution">
+            <input type="text" name="constitution">
         </td>
         <td>
-            <input type="text" name="Const. Mod">
+            <input type="text" name="conMod">
         </td>
         </tbody>
     </table>
@@ -128,10 +128,10 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
         </thead>
         <tbody>
         <td>
-            <input type="text" name="Intelligence">
+            <input type="text" name="intelligence">
         </td>
         <td>
-            <input type="text" name="Intel Mod">
+            <input type="text" name="intelMod">
         </td>
         </tbody>
     </table>
@@ -145,10 +145,10 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
         </thead>
         <tbody>
         <td>
-            <input type="text" name="Wisdom">
+            <input type="text" name="wisdom">
         </td>
         <td>
-            <input type="text" name="Wisdom Mod">
+            <input type="text" name="wisMod">
         </td>
         </tbody>
     </table>
@@ -162,10 +162,10 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
         </thead>
         <tbody>
         <td>
-            <input type="text" name="Charisma">
+            <input type="text" name="charisma">
         </td>
         <td>
-            <input type="text" name="Char. Mod">
+            <input type="text" name="charMod">
         </td>
         </tbody>
     </table>
@@ -178,12 +178,12 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
         </thead>
         <tbody>
         <td>
-            <input type="text" name="Passive Perception">
+            <input type="text" name="passiveWisdomPerception">
         </td>
         </tbody>
     </table>
 
-    <h4>Weapons</h4>
+
 <table>
     <th>Weapon</th>
     <tr>
@@ -196,6 +196,37 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
     </td>
     </tr>
 </table>
+    <br>
+
+
+
+    <table>
+        <th>Gear</th>
+        <tr>
+            <td>
+                <select name="gearID">
+                    @for(gear <- gears){
+                    <option value="@gear.getGearID()">@gear.getGearName()</option>
+                    }
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+
+
+    <table>
+    <th>Spell</th>
+    <tr>
+        <td>
+            <select name="gearID">
+                @for(spell <- spells){
+                <option value="@spell.getSpellID()">@spell.getSpellName()</option>
+                }
+            </select>
+        </td>
+    </tr>
+    </table>
     Background Notes:
         <table class = "table table-striped">
             <thead>
@@ -208,10 +239,10 @@ alignments : List[CharacterAlignment], equipments : List[Equipment])
             </thead>
             <tbody>
             <tr>
-                <td><input type="text" name="Personality Traits"></td>
-                <td><input type="text" name="Ideals"></td>
-                <td><input type="text" name="Bonds"></td>
-                <td><input type="text" name="Flaws"></td>
+                <td><input type="text" name="personalityTraits"></td>
+                <td><input type="text" name="ideals"></td>
+                <td><input type="text" name="bonds"></td>
+                <td><input type="text" name="flaws"></td>
             </tr>
             </tbody>
         </table>
