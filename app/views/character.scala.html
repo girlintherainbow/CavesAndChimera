@@ -21,7 +21,6 @@ Character Info:
     <table class = "table table-striped">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Level</th>
             <th>Race</th>
             <th>Class</th>
@@ -32,7 +31,7 @@ Character Info:
         </thead>
         <tbody>
 
-            <td>@details.getGameCharacterID()</td>
+
             <td>@details.getCharacterLevel()</td>
             <td>@details.getCharacterRaceName()</td>
             <td>@details.getCharacterClassName()</td>
@@ -57,6 +56,7 @@ Skills:
             <td>@details.getStrengthMod</td>
         </tbody>
     </table>
+</div>
     <div class="container">
         <table class = "table table-striped">
             <thead>
@@ -70,6 +70,7 @@ Skills:
             <td>@details.getDexMod</td>
             </tbody>
         </table>
+    </div>
         <div class="container">
             <table class = "table table-striped">
                 <thead>
@@ -83,6 +84,7 @@ Skills:
                 <td>@details.getConMod</td>
                 </tbody>
             </table>
+        </div>
             <div class="container">
                 <table class = "table table-striped">
                     <thead>
@@ -96,6 +98,7 @@ Skills:
                     <td>@details.getIntelMod</td>
                     </tbody>
                 </table>
+            </div>
 
                 <div class="container">
                     <table class = "table table-striped">
@@ -110,6 +113,7 @@ Skills:
                         <td>@details.getWisMod</td>
                         </tbody>
                     </table>
+                </div>
 
                     <div class="container">
                         <table class = "table table-striped">
@@ -124,6 +128,7 @@ Skills:
                             <td>@details.getCharMod</td>
                             </tbody>
                         </table>
+                    </div>
 
                         <div class="container">
                             <table class = "table table-striped">
@@ -136,6 +141,7 @@ Skills:
                                 <td>@details.getPassiveWisdomPerception</td>
                                 </tbody>
                             </table>
+                        </div>
      <p>
 
 
@@ -287,6 +293,9 @@ Skills:
             </tbody>
         </table>
     </div>
-</div>
+<form method="get" action="/activecharacters">
+    <input type = "submit" value="HOME">
+</form>
+
 </body>
 </html>

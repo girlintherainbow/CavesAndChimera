@@ -1,5 +1,5 @@
 @(races : List[CharacterRace], classes : List[CharacterClass], backgrounds : List[CharacterBackground],
-alignments : List[CharacterAlignment], equipments : List[Equipment], gears : List[Gear], spells : List[Spell])
+alignments : List[CharacterAlignment], equipments : List[Equipment], locations : List[EquipmentLocation], gears : List[Gear], spells : List[Spell])
 @import helper._
 <!DOCTYPE html>
 <html lang="en">
@@ -186,11 +186,19 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], gears : Lis
 
 <table>
     <th>Weapon</th>
+    <th>Weapon Location</th>
     <tr>
     <td>
         <select name="equipmentID">
             @for(equipment <- equipments){
             <option value="@equipment.getEquipmentID()">@equipment.getEquipmentName()</option>
+            }
+        </select>
+    </td>
+    <td>
+        <select name="equipmentLocationID">
+            @for(location <- locations){
+            <option value="@location.getEquipmentLocationID()">@location.getEquipmentLocationName()</option>
             }
         </select>
     </td>

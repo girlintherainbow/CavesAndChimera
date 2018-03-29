@@ -229,6 +229,10 @@ public class CharacterController extends Controller
                 createQuery("SELECT e FROM Equipment e " +
                         "ORDER BY equipmentName").getResultList();
 
+        List<EquipmentLocation> locations = jpaApi.em().
+                createQuery("SELECT el FROM EquipmentLocation el " +
+                        "ORDER BY equipmentLocationID").getResultList();
+
         List<Gear> gears = jpaApi.em().
                 createQuery("SELECT g FROM Gear g " +
                         "ORDER BY gearName").getResultList();
@@ -237,7 +241,7 @@ public class CharacterController extends Controller
                 createQuery("SELECT s FROM Spell s " +
                         "ORDER BY spellName").getResultList();
 
-        return ok(views.html.newcharacter.render(races, classes, backgrounds, alignments, equipments, gears, spells));
+        return ok(views.html.newcharacter.render(races, classes, backgrounds, alignments, equipments, locations,gears, spells));
     }
 
     @Transactional
@@ -298,11 +302,24 @@ public class CharacterController extends Controller
         CharacterEquipmentLink characterEquipmentID = new CharacterEquipmentLink();
 
         int equipmentID = new Integer(form.get("equipmentID"));
+        int equipmentLocationID = new Integer(form.get("equipmentLocationID"));
+
         characterEquipmentID.setEquipmentID(equipmentID);
 
+
         characterEquipmentID.setGameCharacterID(gameCharacter.getGameCharacterID());
+        characterEquipmentID.setEquipmentLocationID(equipmentLocationID);
         jpaApi.em().persist(characterEquipmentID);
 
+
+       /* EquipmentLocation locations = new EquipmentLocation();
+
+        int equipmentLocationID = new Integer(form.get("equipmentLocationID"));
+        locations.setEquipmentLocationID(equipmentLocationID);
+
+
+        locations.setEquipmentLocationID(gameCharacter.getGameCharacterID());
+        jpaApi.em().persist(locations);*/
 
         CharacterGearLink characterGearID = new CharacterGearLink();
 
@@ -334,6 +351,7 @@ public class CharacterController extends Controller
 
         characterNotes.setGameCharacterID(gameCharacter.getGameCharacterID());
         jpaApi.em().persist(characterNotes);
+
 
         return redirect(routes.CharacterController.getGameCharacters());
     }
