@@ -247,15 +247,18 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
             </thead>
             <tbody>
             <tr>
-                <td><input type="text" name="personalityTraits"></td>
-                <td><input type="text" name="ideals"></td>
-                <td><input type="text" name="bonds"></td>
-                <td><input type="text" name="flaws"></td>
+                <td><textarea name="personalityTraits" cols="30" rows="10"></textarea></td>
+                <td><textarea name="ideals"cols="30" rows="10"></textarea></td>
+                <td><textarea name="bonds"cols="30" rows="10"></textarea></td>
+                <td><textarea name="flaws"cols="30" rows="10"></textarea></td>
             </tr>
             </tbody>
         </table>
     @CSRF.formField
     <td><input type="Submit" value = "Add Character"></td>
+</form>
+<form method="get" action="/activecharacters">
+    <input type = "submit" value="HOME">
 </form>
 </body>
 </html>
