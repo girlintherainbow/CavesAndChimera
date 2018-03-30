@@ -12,9 +12,10 @@ POST   /AddWeapon                          controllers.CharacterController.postA
 POST  /RemoveWeapon                          controllers.CharacterController.postRemoveWeapon
 
 POST  /AddGear                             controllers.CharacterController.postAddGear
+POST  /RemoveGear                         controllers.CharacterController.postRemoveGear
 
 POST /AddSpell                             controllers.CharacterController.postAddSpell
-
+POST  /RemoveSpell                         controllers.CharacterController.postRemoveSpell
 
  GET   /newCharacter                        controllers.CharacterController.getNewCharacter
  POST  /newCharacter                       controllers.CharacterController.postNewCharacter

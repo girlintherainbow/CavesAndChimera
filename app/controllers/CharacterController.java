@@ -371,14 +371,35 @@ public class CharacterController extends Controller
 
         return redirect(routes.CharacterController.getGameCharacter(gameCharacterID));
     }
-    /*@Transactional
+    @Transactional
     public Result postRemoveGear()
     {
+    DynamicForm form = formFactory.form().bindFromRequest();
+        int characterGearID = Integer.parseInt(form.get("characterGearID"));
+        int gameCharacterID = Integer.parseInt(form.get("gameCharacterID"));
+
+        CharacterGearLink characterGear = jpaApi.em().
+                createQuery("SELECT cg FROM CharacterGearLink cg WHERE characterGearID = :characterGearID", CharacterGearLink.class).
+                setParameter("characterGearID", characterGearID).getSingleResult();
+
+        jpaApi.em().remove(characterGear);
+
+        return redirect(routes.CharacterController.getGameCharacter(gameCharacterID));
 
     }
     @Transactional
     public Result postRemoveSpell()
     {
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int characterSpellID = Integer.parseInt(form.get("characterSpellID"));
+        int gameCharacterID = Integer.parseInt(form.get("gameCharacterID"));
 
-    }*/
+        CharacterSpellLink characterSpell = jpaApi.em().
+                createQuery("SELECT cs FROM CharacterSpellLink cs WHERE characterSpellID = :characterSpellID", CharacterSpellLink.class).
+                setParameter("characterSpellID", characterSpellID).getSingleResult();
+
+        jpaApi.em().remove(characterSpell);
+
+        return redirect(routes.CharacterController.getGameCharacter(gameCharacterID));
+    }
 }

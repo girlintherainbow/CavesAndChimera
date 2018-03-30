@@ -218,6 +218,14 @@ Skills:
                 <td>@gear.getGearWeight</td>
                 <td>@gear.getGearCost</td>
             </tr>
+            <td>
+                <form method="POST" action="/RemoveGear">
+                    @CSRF.formField
+                    <input type="submit" value="Remove">
+                    <input type="hidden" name="characterGearID" value="@gear.getCharacterGearID()">
+                    <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
+                </form>
+            </td>
             }
             </tbody>
         </table>
@@ -261,6 +269,14 @@ Skills:
                 <td>@spell.getAttack_Save</td>
                 <td>@spell.getDamage_Effect</td>
             </tr>
+            <td>
+                <form method="POST" action="/RemoveSpell">
+                    @CSRF.formField
+                    <input type="submit" value="Remove">
+                    <input type="hidden" name="characterSpellID" value="@spell.getCharacterSpellID()">
+                    <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
+                </form>
+            </td>
             }
             </tbody>
         </table>
