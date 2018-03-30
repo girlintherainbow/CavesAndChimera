@@ -9,6 +9,7 @@ POST   /character/:id                      controllers.CharacterController.postG
 
 
 POST   /AddWeapon                          controllers.CharacterController.postAddWeapon
+POST  /RemoveWeapon                          controllers.CharacterController.postRemoveWeapon
 
 POST  /AddGear                             controllers.CharacterController.postAddGear
 

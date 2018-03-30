@@ -7,6 +7,7 @@ import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
+import scala.Int;
 import views.html.homepage;
 
 import javax.inject.Inject;
@@ -241,7 +242,7 @@ public class CharacterController extends Controller
                 createQuery("SELECT s FROM Spell s " +
                         "ORDER BY spellName").getResultList();
 
-        return ok(views.html.newcharacter.render(races, classes, backgrounds, alignments, equipments, locations,gears, spells));
+        return ok(views.html.newcharacter.render(races, classes, backgrounds, alignments, equipments, locations, gears, spells));
     }
 
     @Transactional
@@ -293,7 +294,6 @@ public class CharacterController extends Controller
         gameCharacter.setCharisma(charisma);
         gameCharacter.setCharMod(charMod);
         gameCharacter.setPassiveWisdomPerception(passiveWisdomPerception);
-
 
 
         jpaApi.em().persist(gameCharacter);
@@ -355,4 +355,30 @@ public class CharacterController extends Controller
 
         return redirect(routes.CharacterController.getGameCharacters());
     }
+
+    @Transactional
+    public Result postRemoveWeapon()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int characterEquipmentID = Integer.parseInt(form.get("characterEquipmentID"));
+        int gameCharacterID = Integer.parseInt(form.get("gameCharacterID"));
+
+        CharacterEquipmentLink characterEquipment = jpaApi.em().
+                createQuery("SELECT ce FROM CharacterEquipmentLink ce WHERE characterEquipmentID = :characterEquipmentID", CharacterEquipmentLink.class).
+                setParameter("characterEquipmentID", characterEquipmentID).getSingleResult();
+
+        jpaApi.em().remove(characterEquipment);
+
+        return redirect(routes.CharacterController.getGameCharacter(gameCharacterID));
+    }
+    /*@Transactional
+    public Result postRemoveGear()
+    {
+
+    }
+    @Transactional
+    public Result postRemoveSpell()
+    {
+
+    }*/
 }

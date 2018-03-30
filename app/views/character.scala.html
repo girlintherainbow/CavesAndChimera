@@ -170,6 +170,14 @@ Skills:
                         <td>@equipment.getEquipmentProperties</td>
                         <td>@equipment.getEquipmentCost</td>
                     </tr>
+                    <td>
+                        <form method="POST" action="/RemoveWeapon">
+                            @CSRF.formField
+                            <input type="submit" value="Remove">
+                            <input type="hidden" name="characterEquipmentID" value="@equipment.getCharacterEquipmentID()">
+                            <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
+                        </form>
+                    </td>
                     }
                     </tbody>
                 </table>
