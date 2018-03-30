@@ -6,19 +6,19 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=deviceml>dth, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/stylesheets/custom.css">
     <script src="/assets/lib/jquery/jquery.min.js"></script>
     <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
-    <meta charset="UTF-8">
 </head>
 <h1>@details.getCharacterName()</h1>
 <body>
 
-<p></p>
-Character Info:
+<p>Character Info:</p>
+
 <div class="container">
-    <table class = "table table-striped">
+    <table class = "table table-bordered">
         <thead>
         <tr>
             <th>Level</th>
@@ -44,7 +44,7 @@ Character Info:
 <p></p>
 Skills:
 <div class="container">
-    <table class = "table table-striped">
+    <table class = "table table-bordered">
         <thead>
         <tr>
             <th>Strength</th>
@@ -57,8 +57,10 @@ Skills:
         </tbody>
     </table>
 </div>
+
+
     <div class="container">
-        <table class = "table table-striped">
+        <table class = "table table-bordered">
             <thead>
             <tr>
                 <th>Dexterity</th>
@@ -71,8 +73,10 @@ Skills:
             </tbody>
         </table>
     </div>
+
+
         <div class="container">
-            <table class = "table table-striped">
+            <table class = "table table-bordered">
                 <thead>
                 <tr>
                     <th>Constitution</th>
@@ -85,8 +89,10 @@ Skills:
                 </tbody>
             </table>
         </div>
+
+
             <div class="container">
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                     <thead>
                     <tr>
                         <th>Intelligence</th>
@@ -101,7 +107,7 @@ Skills:
             </div>
 
                 <div class="container">
-                    <table class = "table table-striped">
+                    <table class = "table table-bordered">
                         <thead>
                         <tr>
                             <th>Wisdom</th>
@@ -116,7 +122,7 @@ Skills:
                 </div>
 
                     <div class="container">
-                        <table class = "table table-striped">
+                        <table class = "table table-bordered">
                             <thead>
                             <tr>
                                 <th>Charisma</th>
@@ -131,7 +137,7 @@ Skills:
                     </div>
 
                         <div class="container">
-                            <table class = "table table-striped">
+                            <table class = "table table-bordered">
                                 <thead>
                                 <tr>
                                     <th>Passive Perception</th>
@@ -147,11 +153,10 @@ Skills:
 
      </p>
 
-    Weapons:
+    <h3>Weapons</h3>
     <div class="row">
-        <div class="col-sm-6">
             <div class="container">
-                <table class = "table table-striped">
+                <table>
                     <thead>
                     <tr>
                         <th>Weapon Name</th>
@@ -202,7 +207,7 @@ Skills:
 
     </p>
     Gear:
-    <div class="container">
+    <div class="container-fluid">
         <table class = "table table-striped">
             <thead>
             <tr>

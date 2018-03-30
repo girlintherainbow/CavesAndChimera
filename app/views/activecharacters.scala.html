@@ -1,34 +1,35 @@
 @(characters : List[GameCharacter])
 @import helper._
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=deviceml>dth, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/stylesheets/custom.css">
     <script src="/assets/lib/jquery/jquery.min.js"></script>
     <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
-    <meta charset="UTF-8">
+
 </head>
 <h1>Caves and Chimera</h1>
 <body>
-
-<div class="container">
-    <table class = "table table-dark">
-                <thead>
+<div class="container-fluid">
+    <table id="1" class = "table table-bordered">
+        <thead>
                 <tr>
                     <th>Active Characters</th>
                 </tr>
-                </thead>
-                <tbody>
+        </thead>
+        <tbody>
+
                @for(character <- characters){
                <tr>
                     <td><a href="character/@character.getGameCharacterID"> @character.getCharacterName()</a></td>
                </tr>
                }
-                </tbody>
-    </table>
-</div>
+        </tbody>
+     </table>
+
 
 <div class = "row">
     <div class = "col-sm-4">
@@ -36,6 +37,7 @@
             <input  type = "submit" class = "btn btn-info btn-block" value = "New Character">
         </form>
     </div>
+</div>
 </div>
 </body>
 </html>

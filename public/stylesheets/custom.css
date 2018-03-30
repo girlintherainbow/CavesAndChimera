@@ -1,0 +1,24 @@
+
+body {
+
+  background-image: url("/assets/images/grassmatt.JPG");
+  background-size: cover;
+}
+head {
+
+
+}
+
+
+div {
+width: 400px;
+
+}
+table, tr, td {
+background-color: rgb(85, 107, 47);
+border-color:#556B2F;
+}
+th,td {
+text-align: center;
+}
+
