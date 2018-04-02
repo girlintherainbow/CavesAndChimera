@@ -25,7 +25,7 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
         </thead>
         <tbody>
         <tr>
-            <td class="nctext">
+            <td>
                 <input type="text" name="characterName">
             </td>
         </tr>
@@ -217,11 +217,11 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
     </table>
 
 <h2>Weapons:</h2>
-<table class= "table">
+<table id="weapons" class= "table">
     <thead>
     <tr>
-    <th>Weapon</th>
-    <th>Weapon Location</th>
+    <th>Add Weapon:</th>
+    <th>Weapon Location:</th>
     </thead>
     <tbody>
     <tr>
@@ -249,7 +249,7 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
     <table class= "table">
         <thead>
         <tr>
-        <th>Gear</th>
+        <th>Add Gear:</th>
         </tr>
         </thead>
         <tbody>
@@ -270,7 +270,7 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
     <table class= "table">
         <thead>
             <tr>
-             <th>Spell</th>
+             <th>Add Spell:</th>
             </tr>
         </thead>
         <tbody>
@@ -308,9 +308,10 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
     @CSRF.formField
     <input type="Submit"  class="btn btn-success" value = "Add Character">
 </form>
+
 <form method="get" action="/activecharacters">
-    <input type = "submit"  class="btn btn-success" value="HOME">
+  <input type = "submit"  class="btn btn-success" value="HOME">
 </form>
-</div>
+    </div>
 </body>
 </html>

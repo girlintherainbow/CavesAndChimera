@@ -5,23 +5,24 @@ body {
   background-size: cover;
  align: center;
 }
+
 h1, h2 {
 text-align: center;
 color: 	#FFF8DC;
 }
 
-
-#skill {
-background-color: #70380f;
-}
-
-div {
+#name {
 width: 400px;
 align: center;
 }
 
-input {
+div  {
+width: 400px;
 align: center;
+}
+
+input, .button {
+align: center !important;
 }
 
 #newcharacterpage , .nctext {
@@ -30,15 +31,15 @@ color: 	black;
 
 table {
 background-color: rgb(85, 107, 47);
-border-style: ridge;
- border-width: 5px;
-border-color:#70380f;
+border:5px ridge #70380f;
 color: 	#FFF8DC;
 
 }
-th, td {
 
+th, td {
 text-align: center;
+border:5px ridge #70380f  !important ;
+
 }
 
 

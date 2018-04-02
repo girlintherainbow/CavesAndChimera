@@ -12,12 +12,11 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
     <script src="/assets/lib/jquery/jquery.min.js"></script>
     <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<h1>Character: @details.getCharacterName()</h1>
+
 <body>
-
-<h1>Character Info:</h1>
-
-
+<h1> Character: @details.getCharacterName() </h1>
+<br>
+<h2>Character Info:</h2>
 <div class="container" >
     <table id="charinfo" class = "table">
         <thead>
@@ -45,7 +44,7 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
 
 
 <h2>Skills:</h2>
-<div class="container">
+<div class="container-fluid">
     <table class = "table">
         <thead>
             <tr>
@@ -329,8 +328,12 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
             </tbody>
         </table>
     </div>
+
+
 <form method="get" action="/activecharacters">
-    <input type = "submit"  class="btn btn-success" value="HOME">
+    <div class="text-center">
+     <input type = "submit"  class="btn btn-success" value="HOME">
+    </div>
 </form>
 
 </body>
