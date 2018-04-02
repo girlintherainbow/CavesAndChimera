@@ -3,22 +3,51 @@ body {
 
   background-image: url("/assets/images/grassmatt.JPG");
   background-size: cover;
+ align: center;
 }
-head {
-
-
+h1, h2 {
+text-align: center;
+color: 	#FFF8DC;
 }
 
+
+#skill {
+background-color: #70380f;
+}
 
 div {
 width: 400px;
+align: center;
+}
+
+input {
+align: center;
+}
+
+#newcharacterpage , .nctext {
+color: 	black;
+}
+
+table {
+background-color: rgb(85, 107, 47);
+border-style: ridge;
+ border-width: 5px;
+border-color:#70380f;
+color: 	#FFF8DC;
 
 }
-table, tr, td {
-background-color: rgb(85, 107, 47);
-border-color:#556B2F;
-}
-th,td {
+th, td {
+
 text-align: center;
+}
+
+
+a:link {
+    color: #FFF8DC;
+}
+
+
+a:visited {
+    color: #FFF8DC;
 }
 

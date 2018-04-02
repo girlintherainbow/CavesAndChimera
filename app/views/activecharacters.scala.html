@@ -1,7 +1,7 @@
 @(characters : List[GameCharacter])
 @import helper._
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 <h1>Caves and Chimera</h1>
 <body>
 <div class="container-fluid">
-    <table id="1" class = "table table-bordered">
+    <table id="1" class = "table">
         <thead>
                 <tr>
                     <th>Active Characters</th>
@@ -34,7 +34,7 @@
 <div class = "row">
     <div class = "col-sm-4">
         <form action="newCharacter">
-            <input  type = "submit" class = "btn btn-info btn-block" value = "New Character">
+            <input  type = "submit" class="btn btn-success" value = "New Character">
         </form>
     </div>
 </div>

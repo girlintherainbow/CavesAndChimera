@@ -12,13 +12,14 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
     <script src="/assets/lib/jquery/jquery.min.js"></script>
     <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<h1>@details.getCharacterName()</h1>
+<h1>Character: @details.getCharacterName()</h1>
 <body>
 
-<p>Character Info:</p>
+<h1>Character Info:</h1>
 
-<div class="container">
-    <table class = "table table-bordered">
+
+<div class="container" >
+    <table id="charinfo" class = "table">
         <thead>
         <tr>
             <th>Level</th>
@@ -30,53 +31,52 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
         </tr>
         </thead>
         <tbody>
-
-
-            <td>@details.getCharacterLevel()</td>
-            <td>@details.getCharacterRaceName()</td>
-            <td>@details.getCharacterClassName()</td>
-            <td>@details.getCharacterBackgroundName()</td>
-            <td>@details.getAlignmentName()</td>
-
+            <tr>
+                        <td>@details.getCharacterLevel()</td>
+                        <td>@details.getCharacterRaceName()</td>
+                        <td>@details.getCharacterClassName()</td>
+                        <td>@details.getCharacterBackgroundName()</td>
+                        <td>@details.getAlignmentName()</td>
+            </tr>
         </tbody>
     </table>
 </div>
 <p></p>
-Skills:
+
+
+<h2>Skills:</h2>
 <div class="container">
-    <table class = "table table-bordered">
+    <table class = "table">
         <thead>
-        <tr>
-            <th>Strength</th>
-            <th>Modifier</th>
-        </tr>
-        </thead>
-        <tbody>
-            <td>@details.getStrength</td>
-            <td>@details.getStrengthMod</td>
-        </tbody>
-    </table>
-</div>
-
-
-    <div class="container">
-        <table class = "table table-bordered">
-            <thead>
             <tr>
-                <th>Dexterity</th>
+                <th>Strength</th>
                 <th>Modifier</th>
             </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@details.getStrength</td>
+                <td>@details.getStrengthMod</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>Dexterity</th>
+                    <th>Modifier</th>
+                </tr>
             </thead>
             <tbody>
-            <td>@details.getDexterity</td>
-            <td>@details.getDexMod</td>
+                <tr>
+                    <td>@details.getDexterity</td>
+                    <td>@details.getDexMod</td>
+                </tr>
             </tbody>
         </table>
-    </div>
 
-
-        <div class="container">
-            <table class = "table table-bordered">
+            <table class = "table">
                 <thead>
                 <tr>
                     <th>Constitution</th>
@@ -84,15 +84,14 @@ Skills:
                 </tr>
                 </thead>
                 <tbody>
-                <td>@details.getConstitution</td>
-                <td>@details.getConMod</td>
+                        <tr>
+                            <td>@details.getConstitution</td>
+                            <td>@details.getConMod</td>
+                        </tr>
                 </tbody>
             </table>
-        </div>
 
-
-            <div class="container">
-                <table class = "table table-bordered">
+                <table class = "table">
                     <thead>
                     <tr>
                         <th>Intelligence</th>
@@ -100,14 +99,14 @@ Skills:
                     </tr>
                     </thead>
                     <tbody>
-                    <td>@details.getIntelligence</td>
-                    <td>@details.getIntelMod</td>
+                        <tr>
+                            <td>@details.getIntelligence</td>
+                            <td>@details.getIntelMod</td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>
 
-                <div class="container">
-                    <table class = "table table-bordered">
+                    <table class = "table">
                         <thead>
                         <tr>
                             <th>Wisdom</th>
@@ -115,14 +114,14 @@ Skills:
                         </tr>
                         </thead>
                         <tbody>
-                        <td>@details.getWisdom</td>
-                        <td>@details.getWisMod</td>
+                            <tr>
+                                <td>@details.getWisdom</td>
+                                <td>@details.getWisMod</td>
+                            </tr>
                         </tbody>
                     </table>
-                </div>
 
-                    <div class="container">
-                        <table class = "table table-bordered">
+                        <table class = "table">
                             <thead>
                             <tr>
                                 <th>Charisma</th>
@@ -130,33 +129,35 @@ Skills:
                             </tr>
                             </thead>
                             <tbody>
-                            <td>@details.getCharisma</td>
-                            <td>@details.getCharMod</td>
+                                <tr>
+                                    <td>@details.getCharisma</td>
+                                    <td>@details.getCharMod</td>
+                                </tr>
                             </tbody>
                         </table>
-                    </div>
 
-                        <div class="container">
-                            <table class = "table table-bordered">
+                            <table class = "table">
                                 <thead>
                                 <tr>
                                     <th>Passive Perception</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <td>@details.getPassiveWisdomPerception</td>
+                                    <tr>
+                                        <td>@details.getPassiveWisdomPerception</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
+
      <p>
 
 
      </p>
 
-    <h3>Weapons</h3>
-    <div class="row">
-            <div class="container">
-                <table>
+    <h2>Weapons</h2>
+            <div class="container-fluid">
+                <table class = "table">
                     <thead>
                     <tr>
                         <th>Weapon Name</th>
@@ -175,17 +176,20 @@ Skills:
                         <td>@equipment.getEquipmentProperties</td>
                         <td>@equipment.getEquipmentCost</td>
                     </tr>
-                    <td>
+                    <tr>
+                    <td colspan="5">
                         <form method="POST" action="/RemoveWeapon">
                             @CSRF.formField
-                            <input type="submit" value="Remove">
+                            <input type="submit"  class="btn btn-success" value="Remove">
                             <input type="hidden" name="characterEquipmentID" value="@equipment.getCharacterEquipmentID()">
                             <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
                         </form>
                     </td>
+                    </tr>
                     }
                     </tbody>
                 </table>
+
                 <form method="post" action="/AddWeapon">
                     <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
                 <select name="equipmentID">
@@ -194,21 +198,20 @@ Skills:
                     }
                 </select>
                     @CSRF.formField
-                    <td><input type="Submit" value="Add"> </td>
+                   <input type="Submit"  class="btn btn-success" value="Add">
                 </form>
             </div>
 
-        </div>
-    </div>
+
 
 
     <p>
 
 
     </p>
-    Gear:
+   <h2> Gear:</h2>
     <div class="container-fluid">
-        <table class = "table table-striped">
+        <table class = "table">
             <thead>
             <tr>
                 <th>Item</th>
@@ -223,14 +226,16 @@ Skills:
                 <td>@gear.getGearWeight</td>
                 <td>@gear.getGearCost</td>
             </tr>
-            <td>
+            <tr>
+            <td colspan="3">
                 <form method="POST" action="/RemoveGear">
                     @CSRF.formField
-                    <input type="submit" value="Remove">
+                    <input type="submit"  class="btn btn-success" value="Remove">
                     <input type="hidden" name="characterGearID" value="@gear.getCharacterGearID()">
                     <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
                 </form>
             </td>
+            </tr>
             }
             </tbody>
         </table>
@@ -242,16 +247,16 @@ Skills:
                 }
             </select>
             @CSRF.formField
-            <td><input type="Submit" value="Add"> </td>
+            <input type="Submit"  class="btn btn-success" value="Add">
         </form>
     </div>
     <p>
 
 
     </p>
-    Spells:
+   <h2> Spells:</h2>
     <div class="container">
-        <table class = "table table-striped">
+        <table class= "table">
             <thead>
             <tr>
                 <th>Spell</th>
@@ -274,14 +279,16 @@ Skills:
                 <td>@spell.getAttack_Save</td>
                 <td>@spell.getDamage_Effect</td>
             </tr>
-            <td>
+            <tr>
+            <td colspan="7">
                 <form method="POST" action="/RemoveSpell">
                     @CSRF.formField
-                    <input type="submit" value="Remove">
+                    <input type="submit"  class="btn btn-success" value="Remove">
                     <input type="hidden" name="characterSpellID" value="@spell.getCharacterSpellID()">
                     <input type="hidden" name="gameCharacterID" value="@details.getGameCharacterID">
                 </form>
             </td>
+            </tr>
             }
             </tbody>
         </table>
@@ -293,15 +300,15 @@ Skills:
                 }
             </select>
             @CSRF.formField
-            <td><input type="Submit" value="Add"> </td>
+            <input type="Submit"  class="btn btn-success" value="Add">
         </form>
     </div>
     <p>
 
     </p>
-    Background Notes:
+   <h2>Background Notes:</h2>
     <div class="container">
-        <table class = "table table-striped">
+        <table class= "table">
             <thead>
             <tr>
                 <th>Personality Traits</th>
@@ -323,7 +330,7 @@ Skills:
         </table>
     </div>
 <form method="get" action="/activecharacters">
-    <input type = "submit" value="HOME">
+    <input type = "submit"  class="btn btn-success" value="HOME">
 </form>
 
 </body>

@@ -14,16 +14,18 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
 
 </head>
 <h1>Create Your New Character:</h1>
-<body>
-<div class="container-fluid">
+<body id="newcharacterpage">
+<div class="container">
 <form method="post">
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
-        <th>Character Name: </th>
+            <tr>
+             <th>Character Name: </th>
+            </tr>
         </thead>
         <tbody>
         <tr>
-            <td>
+            <td class="nctext">
                 <input type="text" name="characterName">
             </td>
         </tr>
@@ -31,23 +33,24 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
     </table>
 
 
-
-        <table class="table table-bordered">
-            <h4>Character Info: </h4>
+    <h2>Character Info: </h2>
+        <table class="table">
             <thead>
-            <th>Level</th>
-            <th>Race</th>
-            <th>Class</th>
-            <th>Background</th>
-            <th>Alignment</th>
+                <tr>
+                    <th>Level</th>
+                    <th>Race</th>
+                    <th>Class</th>
+                    <th>Background</th>
+                    <th>Alignment</th>
+                </tr>
             </thead>
             <tbody>
             <tr>
-                <td>
+                <td class="nctext">
                     <input type="text" name="characterLevel">
                 </td>
 
-                <td>
+                <td class="nctext">
                     <select name="characterRaceID">
                         @for(race <- races){
                         <option value="@race.getCharacterRaceID()">@race.getCharacterRaceName()</option>
@@ -55,14 +58,14 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
                     </select>
                 </td>
 
-                <td>
+                <td class="nctext">
                     <select name="characterClassID">
                         @for(classs <- classes){
                         <option value="@classs.getCharacterClassID()">@classs.getCharacterClassName()</option>
                         }
                     </select>
                 </td>
-                <td>
+                <td class="nctext">
                     <select name="characterBackgroundID">
                         @for(background <- backgrounds){
                         <option value="@background.getCharacterBackgroundID()">@background.getCharacterBackgroundName()</option>
@@ -70,7 +73,7 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
                     </select>
                 </td>
 
-                <td>
+                <td class="nctext">
                     <select name="alignmentID">
                         @for(alignment <- alignments){
                         <option value="@alignment.getAlignmentID()">@alignment.getAlignmentName()</option>
@@ -83,8 +86,8 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
 
 
             <br>
-            Character Skills:
-            <table border="1">
+    <h2>Character Skills:</h2>
+            <table class= "table">
                 <thead>
                 <tr>
                     <th>Strength</th>
@@ -92,16 +95,18 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
                 </tr>
                 </thead>
                 <tbody>
-                    <td>
+                <tr>
+                    <td class="nctext">
                         <input type="text" name="strength">
                     </td>
-                    <td>
+                    <td class="nctext">
                         <input type="text" name="strengthMod">
                     </td>
+                </tr>
                 </tbody>
             </table>
 
-    <table border="1">
+    <table class= "table">
         <thead>
         <tr>
             <th>Dexterity</th>
@@ -109,16 +114,18 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
         </tr>
         </thead>
         <tbody>
-        <td>
+        <tr>
+        <td class="nctext">
             <input type="text" name="dexterity">
         </td>
         <td>
             <input type="text" name="dexMod">
         </td>
+        </tr>
         </tbody>
     </table>
 
-    <table border="1">
+    <table class= "table">
         <thead>
         <tr>
             <th>Constitution</th>
@@ -126,16 +133,18 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
         </tr>
         </thead>
         <tbody>
-        <td>
+        <tr>
+        <td class="nctext">
             <input type="text" name="constitution">
         </td>
-        <td>
+        <td class="nctext">
             <input type="text" name="conMod">
         </td>
+        </tr>
         </tbody>
     </table>
 
-    <table border="1">
+    <table class= "table">
         <thead>
         <tr>
             <th>Intelligence</th>
@@ -143,16 +152,18 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
         </tr>
         </thead>
         <tbody>
-        <td>
+        <tr>
+        <td class="nctext">
             <input type="text" name="intelligence">
         </td>
-        <td>
+        <td class="nctext">
             <input type="text" name="intelMod">
         </td>
+        </tr>
         </tbody>
     </table>
 
-    <table border="1">
+    <table class= "table">
         <thead>
         <tr>
             <th>Wisdom</th>
@@ -160,16 +171,18 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
         </tr>
         </thead>
         <tbody>
-        <td>
+        <tr>
+        <td class="nctext">
             <input type="text" name="wisdom">
         </td>
-        <td>
+        <td class="nctext">
             <input type="text" name="wisMod">
         </td>
+        </tr>
         </tbody>
     </table>
 
-    <table border="1">
+    <table class= "table">
         <thead>
         <tr>
             <th>Charisma</th>
@@ -177,41 +190,49 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
         </tr>
         </thead>
         <tbody>
-        <td>
+        <tr>
+        <td class="nctext">
             <input type="text" name="charisma">
         </td>
-        <td>
+        <td class="nctext">
             <input type="text" name="charMod">
         </td>
+        </tr>
         </tbody>
     </table>
 
-    <table border="1">
+    <table class= "table">
         <thead>
         <tr>
             <th>Passive Perception</th>
         </tr>
         </thead>
         <tbody>
-        <td>
+        <tr>
+        <td class="nctext">
             <input type="text" name="passiveWisdomPerception">
         </td>
+        </tr>
         </tbody>
     </table>
 
-
-<table>
+<h2>Weapons:</h2>
+<table class= "table">
+    <thead>
+    <tr>
     <th>Weapon</th>
     <th>Weapon Location</th>
+    </thead>
+    <tbody>
     <tr>
-    <td>
+    <td class="nctext">
         <select name="equipmentID">
             @for(equipment <- equipments){
             <option value="@equipment.getEquipmentID()">@equipment.getEquipmentName()</option>
             }
         </select>
     </td>
-    <td>
+    <td class="nctext">
         <select name="equipmentLocationID">
             @for(location <- locations){
             <option value="@location.getEquipmentLocationID()">@location.getEquipmentLocationName()</option>
@@ -219,15 +240,21 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
         </select>
     </td>
     </tr>
+    </tbody>
 </table>
     <br>
 
 
-
-    <table>
-        <th>Gear</th>
+    <h2>Gear:</h2>
+    <table class= "table">
+        <thead>
         <tr>
-            <td>
+        <th>Gear</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="nctext">
                 <select name="gearID">
                     @for(gear <- gears){
                     <option value="@gear.getGearID()">@gear.getGearName()</option>
@@ -235,14 +262,20 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
                 </select>
             </td>
         </tr>
+        </tbody>
     </table>
     <br>
 
-
-    <table>
-    <th>Spell</th>
+    <h2>Spells:</h2>
+    <table class= "table">
+        <thead>
+            <tr>
+             <th>Spell</th>
+            </tr>
+        </thead>
+        <tbody>
     <tr>
-        <td>
+        <td class="nctext">
             <select name="spellID">
                 @for(spell <- spells){
                 <option value="@spell.getSpellID()">@spell.getSpellName()</option>
@@ -250,9 +283,11 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
             </select>
         </td>
     </tr>
+        </tbody>
     </table>
-    Background Notes:
-        <table class = "table table-striped">
+
+    <h2>Background Notes:</h2>
+        <table class= "table">
             <thead>
             <tr>
                 <th>Personality Traits</th>
@@ -263,18 +298,18 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
             </thead>
             <tbody>
             <tr>
-                <td><textarea name="personalityTraits" cols="30" rows="10"></textarea></td>
-                <td><textarea name="ideals"cols="30" rows="10"></textarea></td>
-                <td><textarea name="bonds"cols="30" rows="10"></textarea></td>
-                <td><textarea name="flaws"cols="30" rows="10"></textarea></td>
+                <td class="nctext"><textarea name="personalityTraits" cols="30" rows="10"></textarea></td>
+                <td class="nctext"><textarea name="ideals" cols="30" rows="10"></textarea></td>
+                <td class="nctext"><textarea name="bonds" cols="30" rows="10"></textarea></td>
+                <td class="nctext"><textarea name="flaws" cols="30" rows="10"></textarea></td>
             </tr>
             </tbody>
         </table>
     @CSRF.formField
-    <td><input type="Submit" value = "Add Character"></td>
+    <input type="Submit"  class="btn btn-success" value = "Add Character">
 </form>
 <form method="get" action="/activecharacters">
-    <input type = "submit" value="HOME">
+    <input type = "submit"  class="btn btn-success" value="HOME">
 </form>
 </div>
 </body>
