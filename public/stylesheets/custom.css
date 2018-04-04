@@ -21,9 +21,6 @@ width: 400px;
 align: center;
 }
 
-input, .button {
-align: center !important;
-}
 
 #newcharacterpage , .nctext {
 color: 	black;
@@ -42,7 +39,6 @@ border:5px ridge #70380f  !important ;
 
 }
 
-
 a:link {
     color: #FFF8DC;
 }
@@ -51,4 +47,6 @@ a:link {
 a:visited {
     color: #FFF8DC;
 }
-
+.text-center {
+    text-align: center;
+}

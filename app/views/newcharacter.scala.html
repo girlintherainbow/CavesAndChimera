@@ -305,13 +305,17 @@ alignments : List[CharacterAlignment], equipments : List[Equipment], locations :
             </tr>
             </tbody>
         </table>
+    <div class="text-center">
     @CSRF.formField
     <input type="Submit"  class="btn btn-success" value = "Add Character">
+    </div>
 </form>
-
+<br>
+    <div class="text-center">
 <form method="get" action="/activecharacters">
   <input type = "submit"  class="btn btn-success" value="HOME">
 </form>
+    </div>
     </div>
 </body>
 </html>
