@@ -83,6 +83,18 @@ font-family: 'Kalam', cursive;
 
     color: #FFF8DC;
 }
+.subbutton
+{
+font-size: 150%;
+font-family: 'Kalam', cursive;
+}
+.dropit  {
+
+border:5px ridge #70380f  !important ;
+}
+
 .text-center {
+font-size: 75%;
     text-align: center;
+    font-family: 'Berkshire Swash', cursive;
 }
