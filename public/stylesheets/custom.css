@@ -6,9 +6,21 @@ body {
  align: center;
 }
 
-h1, h2 {
+h1 {
+font-size: 600%;
+font-family: 'Berkshire Swash', cursive;
+
 text-align: center;
 color: 	#FFF8DC;
+
+}
+
+h2 {
+font-size: 200%;
+font-family: 'Berkshire Swash', cursive;
+text-align: center;
+color: 	#FFF8DC;
+
 }
 
 #name {
@@ -21,30 +33,54 @@ width: 400px;
 align: center;
 }
 
+#textspace {
+width: 400px;
+align: center;
+}
 
 #newcharacterpage , .nctext {
-color: 	black;
+font-size: 150% ;
+color: 	black !important;
+font-family: 'Kalam', cursive
+
 }
 
 table {
 background-color: rgb(85, 107, 47);
 border:5px ridge #70380f;
 color: 	#FFF8DC;
+font-family: 'Kalam', cursive;
+
 
 }
 
-th, td {
+th {
+font-size: 200%;
 text-align: center;
 border:5px ridge #70380f  !important ;
+font-family: 'Kalam', cursive;
+}
 
+
+th, td {
+font-size: 150%;
+text-align: center;
+border:5px ridge #70380f  !important ;
+font-family: 'Kalam', cursive;
 }
 
 a:link {
+font-family: 'Kalam', cursive;
+
+
     color: #FFF8DC;
 }
 
 
 a:visited {
+font-family: 'Kalam', cursive;
+
+
     color: #FFF8DC;
 }
 .text-center {

@@ -9,6 +9,9 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/stylesheets/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+
     <script src="/assets/lib/jquery/jquery.min.js"></script>
     <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
 </head>
@@ -18,7 +21,7 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
 <br>
 <h2>Character Info:</h2>
 <div class="container" >
-    <table id="charinfo" class = "table">
+    <table class = "table">
         <thead>
         <tr>
             <th>Level</th>
@@ -176,7 +179,7 @@ notes : List[CharacterNotes], equipmentList : List[Equipment], gearList : List[G
                         <td>@equipment.getEquipmentCost</td>
                     </tr>
                     <tr>
-                    <td colspan="5">
+                    <td colspan="6">
                         <form method="POST" action="/RemoveWeapon">
                             @CSRF.formField
                             <input type="submit"  class="btn btn-success" value="Remove">

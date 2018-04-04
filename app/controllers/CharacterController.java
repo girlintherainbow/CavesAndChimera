@@ -50,7 +50,7 @@ public class CharacterController extends Controller
                 " cr.characterRaceName, cc.characterClassName, " +
                 "cb.characterBackgroundName, ca.alignmentName, gc.strength," +
                 "gc.strengthMod, gc.dexterity, gc.dexMod, gc.constitution," +
-                "gc.conMod, gc.intelligence, gc.intelMod, gc.wisdom," +
+                "gc.conMod, gc.intelligence, gc.intelMod, gc.wisdom, " +
                 "gc.wisMod, gc.charisma, gc.charMod, gc.passiveWisdomPerception) " +
                 "FROM CharacterRace cr " +
                 "JOIN GameCharacter gc ON cr.characterRaceID = gc.characterRaceID " +

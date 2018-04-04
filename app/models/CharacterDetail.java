@@ -52,7 +52,7 @@ public class CharacterDetail
         this.conMod = conMod;
         this.intelligence = intelligence;
         this.intelMod = intelMod;
-        this.intelMod = wisdom;
+        this.wisdom = wisdom;
         this.wisMod = wisMod;
         this.charisma = charisma;
         this.charMod = charMod;
